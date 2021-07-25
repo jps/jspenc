@@ -1,7 +1,99 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "jspenc-web": {
+      "root": "apps/jspenc-web",
+      "sourceRoot": "apps/jspenc-web",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/jspenc-web",
+            "outputPath": "dist/apps/jspenc-web"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "jspenc-web:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "jspenc-web:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "jspenc-web:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/jspenc-web"],
+          "options": {
+            "jestConfig": "apps/jspenc-web/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/jspenc-web/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "jspenc-web-e2e": {
+      "root": "apps/jspenc-web-e2e",
+      "sourceRoot": "apps/jspenc-web-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/jspenc-web-e2e/cypress.json",
+            "tsConfig": "apps/jspenc-web-e2e/tsconfig.e2e.json",
+            "devServerTarget": "jspenc-web:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "jspenc-web:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/jspenc-web-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/next"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "jspenc-web"
 }
