@@ -33,6 +33,9 @@
     "jspenc-web-e2e": {
       "tags": [],
       "implicitDependencies": ["jspenc-web"]
+    },
+    "ui-shared-ui": {
+      "tags": []
     }
   }
 }
