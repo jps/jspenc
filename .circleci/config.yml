@@ -26,7 +26,8 @@ workflows:
     jobs:
       - restore
       - node/test:
-          pkg-manager: yarn    
+          pkg-manager: yarn
+          version: 16.7.0
           requires: 
             - restore
       - node/run:          
