@@ -19,19 +19,21 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
+          override-ci-command: yarn intall --frozen-lockfile 
           pkg-manager: yarn
 
 workflows:
   master:
     jobs:
-      - restore
       - node/test:
           pkg-manager: yarn
+          override-ci-command: yarn intall --frozen-lockfile 
           version: 16.7.0
           requires: 
             - restore
       - node/run:
           pkg-manager: yarn
           yarn-run: build
+          override-ci-command: yarn intall --frozen-lockfile 
           requires:
             - node/test
