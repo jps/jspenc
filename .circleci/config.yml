@@ -29,8 +29,6 @@ workflows:
           pkg-manager: yarn
           override-ci-command: yarn intall --frozen-lockfile 
           version: 16.7.0
-          requires: 
-            - restore
       - node/run:
           pkg-manager: yarn
           yarn-run: build
