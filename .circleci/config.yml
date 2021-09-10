@@ -27,11 +27,13 @@ workflows:
     jobs:
       - node/test:
           pkg-manager: yarn
-          override-ci-command: yarn intall --frozen-lockfile 
+          override-ci-command: yarn intall --frozen-lockfile
+          cache-version: yarn-berry-v1
           version: 16.7.0
       - node/run:
           pkg-manager: yarn
           yarn-run: build
           override-ci-command: yarn intall --frozen-lockfile 
+          cache-version: yarn-berry-v1
           requires:
             - node/test
