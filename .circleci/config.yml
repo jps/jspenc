@@ -30,7 +30,8 @@ workflows:
           version: 16.7.0
           requires: 
             - restore
-      - node/run:          
+      - node/run:
+          pkg-manager: yarn
           yarn-run: build
           requires:
             - node/test
