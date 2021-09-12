@@ -28,11 +28,11 @@ workflows:
       - node/test:
           name: test
           pkg-manager: yarn
-          version: '16.9.1' 
+          version: '16.7.0' 
       - node/run:
           name: build
           pkg-manager: yarn 
           yarn-run: build
-          version: '16.9.1'  
+          version: '16.7.0'  
           requires:
             - test
