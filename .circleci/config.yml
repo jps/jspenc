@@ -28,7 +28,9 @@ workflows:
       - node/test:
           name: test
           pkg-manager: yarn
-          version: '16.7.0' 
+          version: '16.7.0'
+          requires:
+            - lint
       - node/run:
           name: build
           pkg-manager: yarn 
@@ -36,3 +38,8 @@ workflows:
           version: '16.7.0'  
           requires:
             - test
+      - node/run:
+          name: lint
+          pkg-manager: yarn 
+          yarn-run: affected:lint
+          version: '16.7.0'
