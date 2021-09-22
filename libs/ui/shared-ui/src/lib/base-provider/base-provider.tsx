@@ -1,19 +1,16 @@
 import styled from '@emotion/styled';
+import { ThemeProvider,newskitLightTheme, Button } from 'newskit';
 
 /* eslint-disable-next-line */
 export interface BaseProviderProps {
   children: React.ReactNode
 }
 
-const StyledBaseProvider = styled.div`
-  color: pink;
-`;
-
-export function BaseProvider(props: BaseProviderProps) {
+export function BaseProvider({children}: BaseProviderProps) {
   return (
-    <StyledBaseProvider>
-      <h1>Welcome to BaseProvider!</h1>
-    </StyledBaseProvider>
+    <ThemeProvider theme={newskitLightTheme}>
+      {children}
+    </ThemeProvider>
   );
 }
 
