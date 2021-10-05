@@ -13,7 +13,7 @@ export function Index() {
    */
   return (
     <>
-      <h1>James Spencer</h1>
+      <h1>James Spencer W</h1>
       <p>
         Welcome to my corner of the internet, there's not much here at the moment
         but do feel free to browse some of my writing. or get in <a href="mailto:me@jspenc.com">contact.</a>
@@ -22,17 +22,17 @@ export function Index() {
       <ul>
         <li>
           <a href="https://newskit.co.uk">
-            Add card here
+            NewsKit
           </a>
         </li>
         <li>
           <a href="https://www.moonpig.com">
-            Add card here
+            Moonpig
           </a>
         </li>
         <li>
           <a href="https://seetickets.com">
-            Add card here
+            See Tickets
           </a>
         </li>
       </ul>
