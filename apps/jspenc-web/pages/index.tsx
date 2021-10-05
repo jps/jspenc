@@ -18,6 +18,24 @@ export function Index() {
         Welcome to my corner of the internet, there's not much here at the moment
         but do feel free to browse some of my writing. or get in <a href="mailto:me@jspenc.com">contact.</a>
       </p>
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <a href="https://newskit.co.uk">
+            Add card here
+          </a>
+        </li>
+        <li>
+          <a href="https://www.moonpig.com">
+            Add card here
+          </a>
+        </li>
+        <li>
+          <a href="https://seetickets.com">
+            Add card here
+          </a>
+        </li>
+      </ul>
       <h2>Writing</h2>
       <ul>
         <li>
