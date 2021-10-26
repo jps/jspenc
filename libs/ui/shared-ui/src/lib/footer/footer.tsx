@@ -1,8 +1,14 @@
-import { Stack } from 'newskit';
+import { Stack, TextBlock, styled } from 'newskit';
+
+const FooterContainer = styled.footer`
+  margin-bottom:12px;
+`;
 
 export const Footer = () => 
-  <footer>
+  <FooterContainer>
     <Stack flow="horizontal-center" stackDistribution="flex-end">
+      <TextBlock>
       James Spencer {new Date().getFullYear()} &copy;
+      </TextBlock>
     </Stack>
-  </footer>
+  </FooterContainer>

@@ -1,21 +1,19 @@
 import { Global } from '@emotion/react';
-import styled from '@emotion/styled';
-import { ThemeProvider,newskitLightTheme, Button } from 'newskit';
+import { ThemeProvider,newskitLightTheme } from 'newskit';
 
 /* eslint-disable-next-line */
 export interface BaseProviderProps {
   children: React.ReactNode
 }
 
-export function BaseProvider({children}: BaseProviderProps) {
-  return (
+export const BaseProvider = ({children}: BaseProviderProps) =>  
     <ThemeProvider theme={newskitLightTheme}>
       <Global styles={`
-        html {
-          scroll-behavior: smooth;
+        body{
+          margin:0; 
         }
 
-        //TODO: Remove
+        //TODO: Remove in place of type presets
         h1,h2,h3,h4,h5{
           font-family: 'Raleway', 'sans-serif';
           font-weight: 300;
@@ -94,8 +92,6 @@ export function BaseProvider({children}: BaseProviderProps) {
       `} />
 
       {children}
-    </ThemeProvider>
-  );
-}
+    </ThemeProvider>;
 
 export default BaseProvider;

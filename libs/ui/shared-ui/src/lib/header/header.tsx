@@ -5,10 +5,13 @@ import {
   IconButton,
   IconFilledTwitter,
   Link,
+  styled,
 } from 'newskit';
 
+const HeaderContainer = styled.header`margin-top:16px;`;
+
 export const Header = () => (
-  <header>
+  <HeaderContainer>
     <Stack flow="horizontal-center" stackDistribution="space-between">
       <Block>
         <Link href="/">James Spencer</Link>
@@ -24,5 +27,5 @@ export const Header = () => (
         </Stack>
       </Block>
     </Stack>
-  </header>
+  </HeaderContainer>
 );

@@ -5,7 +5,7 @@ export function Index() {
     <>
       <h1>James Spencer</h1>
       <p>
-        Welcome to my corner of the internet, there's not much here at the moment
+        Welcome to my corner of the internet, there&apos;s not much here at the moment
         but do feel free to browse some of my writing. or get in <a href="mailto:me@jspenc.com">contact.</a>
       </p>
       <h2>Projects</h2>

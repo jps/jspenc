@@ -1,10 +1,9 @@
-import { render } from '@testing-library/react';
-
-import Footer from './footer';
+import { renderWithTheme } from '../teting-utils/render-with-theme';
+import { Footer } from './footer';
 
 describe('Footer', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Footer />);
+    const { baseElement } = renderWithTheme(<Footer />);
     expect(baseElement).toBeTruthy();
   });
 });

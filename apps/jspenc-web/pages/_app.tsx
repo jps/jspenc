@@ -5,37 +5,47 @@ import { BaseProvider, Header, Footer } from '@jspenc/ui/shared-ui';
 import {
   Cell,
   Grid,
-  Stack,
+  styled,
 } from 'newskit';
 import React from 'react';
 
-function CustomApp({ Component, pageProps }: AppProps) {
-  return (
+
+//TODO: would be nice if the system to support full height grids.
+const FullHeightCell = styled(Cell)`
+  min-height:100vh;
+  display:flex; 
+  flex-direction:column;
+`;
+
+const FooterContainer = styled.div`
+  margin-top:auto; 
+`;
+
+const CustomApp = ({ Component, pageProps }: AppProps) => 
     <>
       <Head>
         <title>James Spencer</title>
       </Head>
       <BaseProvider>
-        <Grid>
-          <Cell
-            xs={12}
-            smOffset={1}
-            sm={10}
-            mdOffset={2}
-            md={8}
-            lgOffset={3}
-            lg={6}
-          >
-            <Header/>
-            <main>
-              <Component {...pageProps} />
-            </main>
-            <Footer/>
-          </Cell>
-        </Grid>
+          <Grid>
+            <FullHeightCell
+              xs={12}
+              smOffset={1}
+              sm={10}
+              mdOffset={2}
+              md={8}
+              lgOffset={3}
+              lg={6}
+            >
+                <Header/>
+                <main>
+                  <Component {...pageProps} />
+                </main>
+                <FooterContainer>
+                  <Footer/>
+                </FooterContainer>
+            </FullHeightCell>
+          </Grid>
       </BaseProvider>
-    </>
-  );
-}
-
+    </>;
 export default CustomApp;

@@ -1,10 +1,10 @@
-import { render } from '@testing-library/react';
+import { renderWithTheme } from '../teting-utils/render-with-theme';
 
 import { Header } from './header';
 
 describe('Header', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Header />);
+    const { baseElement } = renderWithTheme(<Header />);
     expect(baseElement).toMatchSnapshot();
   });
 });

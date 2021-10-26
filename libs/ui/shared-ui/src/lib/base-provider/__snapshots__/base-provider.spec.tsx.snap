@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseProvider should render successfully 1`] = `
+<body>
+  <div>
+    <span>
+      Content is passed through
+    </span>
+  </div>
+</body>
+`;
