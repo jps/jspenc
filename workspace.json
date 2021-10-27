@@ -51,7 +51,8 @@
           },
           "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": []
     },
     "jspenc-web-e2e": {
       "root": "apps/jspenc-web-e2e",
@@ -78,7 +79,9 @@
           },
           "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["jspenc-web"]
     },
     "ui-shared-ui": {
       "root": "libs/ui/shared-ui",
@@ -131,7 +134,8 @@
             }
           }
         }
-      }
+      },
+      "tags": []
     },
     "ui-shared-ui-e2e": {
       "root": "apps/ui-shared-ui-e2e",
@@ -189,24 +193,9 @@
             }
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["ui-shared-ui"]
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/next"
-  },
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
-    },
-    "@nrwl/next": {
-      "application": {
-        "style": "@emotion/styled",
-        "linter": "eslint"
-      }
-    }
-  },
-  "defaultProject": "jspenc-web"
+  }
 }
