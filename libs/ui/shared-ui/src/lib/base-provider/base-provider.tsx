@@ -93,5 +93,3 @@ export const BaseProvider = ({children}: BaseProviderProps) =>
 
       {children}
     </ThemeProvider>;
-
-export default BaseProvider;

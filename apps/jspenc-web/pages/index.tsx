@@ -1,4 +1,8 @@
 
+import { MediaCard } from '@jspenc/ui/shared-ui';
+import { Stack } from 'newskit';
+import React from 'react';
+import { writing } from '../content/writing'
 
 export function Index() {
   return (
@@ -28,21 +32,9 @@ export function Index() {
       </ul>
       <h2>Writing</h2>
       <ul>
-        <li>
-          <a href="https://medium.com/newskit-design-system/evolution-of-theming-in-newskit-design-system-4a35bb83617">
-            Evolution of theming in NewsKit design system
-          </a>
-        </li>
-        <li>
-          <a href="http://ceur-ws.org/Vol-917/">
-            Sentimentor: Sentiment Analysis of Twitter Data
-          </a>
-        </li>
-        <li>
-          <a href="https://jspenc435125156.wordpress.com/2020/12/12/a-windows-terminal-that-is-linux/">
-            A Windows terminal that is Linux
-          </a>
-        </li>
+        <Stack flow="vertical-left" spaceInline="space050">
+        {writing.map(({body, ...rest}) => {return { children:body, ...rest }}).map((article,i) => <MediaCard key={i} {...article} />)}
+        </Stack>
       </ul>
     </>
   );
