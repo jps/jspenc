@@ -1,27 +1,19 @@
+import { createTheme, newskitLightTheme, StylePreset } from 'newskit';
+
 export const fonts = {
   fontFamily010: {
-    fontFamily: "'Raleway', sans-serif",
+    fontFamily: "'DM Sans', sans-serif",
     cropConfig: {
-      top: 7.5,
-      bottom: 12,
-    },
-    cropAdjustments: {
-      __shallow: true,
-      '{{fonts.fontSize010}}': {
-        top: 1.5,
-        bottom: 0,
-      },
-      '{{fonts.fontSize020}}': {
-        top: 0,
-      },
+      top: 9,
+      bottom: 9,
     },
   },
 
   fontFamily020: {
-    fontFamily: "'DM Sans', sans-serif",
+    fontFamily: "'Raleway', sans-serif",
     cropConfig: {
-      top: 8.5,
-      bottom: 9.5,
+      top: 8,
+      bottom: 9,
     },
   },
 
@@ -34,3 +26,28 @@ export const fonts = {
     cropAdjustments: '__delete',
   },
 };
+
+const stylePresets: Record<string, StylePreset> = {
+  titleBar: {
+    base: {
+      borderWidth: '0 0 1px 0',
+      borderStyle: 'solid',
+    },
+  },
+};
+
+const componentDefaults = {
+  titleBar: {
+    spaceInset: 'space000',
+  },
+};
+
+export const JspencTheme = createTheme({
+  name: 'jspenc',
+  baseTheme: newskitLightTheme,
+  overrides: {
+    fonts: fonts,
+    componentDefaults: componentDefaults,
+    stylePresets: stylePresets,
+  },
+});

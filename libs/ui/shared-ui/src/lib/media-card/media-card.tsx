@@ -13,7 +13,7 @@ export const MediaCard = ({href, children, headline}: MediaCardProps) =>
     <Link href={href} passHref>
       <Card layout='vertical'>
         <Stack flow="vertical-left" spaceInline="space030">
-          <Headline>{headline}</Headline>
+          <Headline headingAs="h3">{headline}</Headline>
           <TextBlock>{children}</TextBlock>
         </Stack>
       </Card>

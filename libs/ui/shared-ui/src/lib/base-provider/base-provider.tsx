@@ -1,5 +1,6 @@
 import { Global } from '@emotion/react';
-import { ThemeProvider,newskitLightTheme } from 'newskit';
+import { ThemeProvider } from 'newskit';
+import { JspencTheme } from '../theme/theme';
 
 /* eslint-disable-next-line */
 export interface BaseProviderProps {
@@ -7,7 +8,7 @@ export interface BaseProviderProps {
 }
 
 export const BaseProvider = ({children}: BaseProviderProps) =>  
-    <ThemeProvider theme={newskitLightTheme}>
+    <ThemeProvider theme={JspencTheme}>
       <Global styles={`
         body{
           margin:0; 
