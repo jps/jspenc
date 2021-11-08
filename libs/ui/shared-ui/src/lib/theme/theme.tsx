@@ -5,7 +5,7 @@ export const fonts = {
     fontFamily: "'DM Sans', Arial, sans-serif",
     cropConfig: {
       top: 9,
-      bottom: 11,
+      bottom: 4,
     },
   },
 
