@@ -1,49 +1,38 @@
+import { MediaCardList } from '@jspenc/ui/shared-ui';
+import { Cell, TextBlock } from 'newskit';
+import React from 'react';
+import { projects } from '../content';
+import { writing } from '../content/writing';
 
+const writingAsMediaCardData = writing.map(({ body, ...rest }) => {
+  return { children: body, ...rest };
+});
+
+const projectsAsMediaCardData = projects.map(({ body, ...rest }) => {
+  return { children: body, ...rest };
+});
 
 export function Index() {
   return (
     <>
-      <h1>James Spencer</h1>
-      <p>
-        Welcome to my corner of the internet, there&apos;s not much here at the moment
-        but do feel free to browse some of my writing. or get in <a href="mailto:me@jspenc.com">contact.</a>
-      </p>
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <a href="https://newskit.co.uk">
-            NewsKit
-          </a>
-        </li>
-        <li>
-          <a href="https://www.moonpig.com">
-            Moonpig
-          </a>
-        </li>
-        <li>
-          <a href="https://seetickets.com">
-            See Tickets
-          </a>
-        </li>
-      </ul>
-      <h2>Writing</h2>
-      <ul>
-        <li>
-          <a href="https://medium.com/newskit-design-system/evolution-of-theming-in-newskit-design-system-4a35bb83617">
-            Evolution of theming in NewsKit design system
-          </a>
-        </li>
-        <li>
-          <a href="http://ceur-ws.org/Vol-917/">
-            Sentimentor: Sentiment Analysis of Twitter Data
-          </a>
-        </li>
-        <li>
-          <a href="https://jspenc435125156.wordpress.com/2020/12/12/a-windows-terminal-that-is-linux/">
-            A Windows terminal that is Linux
-          </a>
-        </li>
-      </ul>
+      <Cell xs={12}>
+        <TextBlock typographyPreset="editorialDisplay010">
+          James Spencer
+        </TextBlock>
+      </Cell>
+      <Cell xs={12}>
+        <TextBlock typographyPreset="utilityBody030">
+          Welcome to my corner of the internet, there&apos;s not much here at
+          the moment but do feel free to browse some of my writing. or get in{' '}
+          <a href="mailto:me@jspenc.com">contact.</a>
+        </TextBlock>
+      </Cell>
+      <Cell xs={12}>
+        <MediaCardList title="Writing" cards={writingAsMediaCardData} />
+      </Cell>
+      <Cell xs={12}>
+        <MediaCardList title="Projects" cards={projectsAsMediaCardData} />
+      </Cell>
     </>
   );
 }

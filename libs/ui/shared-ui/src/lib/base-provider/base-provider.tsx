@@ -1,5 +1,6 @@
 import { Global } from '@emotion/react';
-import { ThemeProvider,newskitLightTheme } from 'newskit';
+import { ThemeProvider } from 'newskit';
+import { JspencTheme } from '../theme/theme';
 
 /* eslint-disable-next-line */
 export interface BaseProviderProps {
@@ -7,21 +8,10 @@ export interface BaseProviderProps {
 }
 
 export const BaseProvider = ({children}: BaseProviderProps) =>  
-    <ThemeProvider theme={newskitLightTheme}>
+    <ThemeProvider theme={JspencTheme}>
       <Global styles={`
         body{
           margin:0; 
-        }
-
-        //TODO: Remove in place of type presets
-        h1,h2,h3,h4,h5{
-          font-family: 'Raleway', 'sans-serif';
-          font-weight: 300;
-        }
-        p,a{
-          font-family: 'DM Sans', sans-serif;
-          font-weight: 400;
-          font-style: normal;
         }
 
         @font-face {
@@ -93,5 +83,3 @@ export const BaseProvider = ({children}: BaseProviderProps) =>
 
       {children}
     </ThemeProvider>;
-
-export default BaseProvider;
