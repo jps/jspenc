@@ -14,17 +14,6 @@ export const BaseProvider = ({children}: BaseProviderProps) =>
           margin:0; 
         }
 
-        //TODO: Remove in place of type presets
-        h1,h2,h3,h4,h5{
-          font-family: 'Raleway', 'sans-serif';
-          font-weight: 300;
-        }
-        p,a{
-          font-family: 'DM Sans', sans-serif;
-          font-weight: 400;
-          font-style: normal;
-        }
-
         @font-face {
           font-family: 'DM Sans';
           src: url('/fonts/dmsans-regular.woff2')

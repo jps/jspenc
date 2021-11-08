@@ -1,9 +1,14 @@
-import { MediaCard } from '@jspenc/ui/shared-ui';
-import { Block, Cell, Stack, TextBlock, TitleBar } from 'newskit';
+import { MediaCardList } from '@jspenc/ui/shared-ui';
+import { Cell, TextBlock } from 'newskit';
 import React from 'react';
+import { projects } from '../content';
 import { writing } from '../content/writing';
 
 const writingAsMediaCardData = writing.map(({ body, ...rest }) => {
+  return { children: body, ...rest };
+});
+
+const projectsAsMediaCardData = projects.map(({ body, ...rest }) => {
   return { children: body, ...rest };
 });
 
@@ -23,28 +28,10 @@ export function Index() {
         </TextBlock>
       </Cell>
       <Cell xs={12}>
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <a href="https://newskit.co.uk">NewsKit</a>
-          </li>
-          <li>
-            <a href="https://www.moonpig.com">Moonpig</a>
-          </li>
-          <li>
-            <a href="https://seetickets.com">See Tickets</a>
-          </li>
-        </ul>
+        <MediaCardList title="Writing" cards={writingAsMediaCardData} />
       </Cell>
       <Cell xs={12}>
-        <Block spaceStack="space060">
-          <TitleBar headingAs="h2">Writing</TitleBar>
-        </Block>
-        <Stack flow="vertical-left" spaceInline="space050" list>
-          {writingAsMediaCardData.map((article, i) => (
-            <MediaCard key={i} {...article} />
-          ))}
-        </Stack>
+        <MediaCardList title="Projects" cards={projectsAsMediaCardData} />
       </Cell>
     </>
   );

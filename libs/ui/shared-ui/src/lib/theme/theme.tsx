@@ -2,15 +2,15 @@ import { createTheme, newskitLightTheme, StylePreset } from 'newskit';
 
 export const fonts = {
   fontFamily010: {
-    fontFamily: "'DM Sans', sans-serif",
+    fontFamily: "'DM Sans', Arial, sans-serif",
     cropConfig: {
       top: 9,
-      bottom: 9,
+      bottom: 11,
     },
   },
 
   fontFamily020: {
-    fontFamily: "'Raleway', sans-serif",
+    fontFamily: "'Raleway', Arial, sans-serif",
     cropConfig: {
       top: 8,
       bottom: 9,
@@ -42,10 +42,15 @@ const componentDefaults = {
   },
 };
 
+const colors = {
+  interactiveVisited010: '{}',
+}
+
 export const JspencTheme = createTheme({
   name: 'jspenc',
   baseTheme: newskitLightTheme,
   overrides: {
+    colors: colors,
     fonts: fonts,
     componentDefaults: componentDefaults,
     stylePresets: stylePresets,
