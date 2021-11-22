@@ -1,4 +1,4 @@
-import { Block, TitleBar, Stack } from 'newskit';
+import { Block, TitleBar, Stack, styled } from 'newskit';
 import { MediaCard, MediaCardProps } from '../..';
 
 export interface MediaCardListProps {
@@ -6,8 +6,12 @@ export interface MediaCardListProps {
   cards: MediaCardProps[];
 }
 
+const Section = styled.section`
+  width:100%;
+`;
+
 export const MediaCardList = ({title, cards}: MediaCardListProps) => (
-  <section>
+  <Section>
     <Block spaceStack="space060">
       <TitleBar headingAs="h2">{title}</TitleBar>
     </Block>
@@ -16,5 +20,5 @@ export const MediaCardList = ({title, cards}: MediaCardListProps) => (
         <MediaCard key={i} {...article} />
       ))}
     </Stack>
-  </section>
+  </Section>
 );

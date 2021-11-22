@@ -10,8 +10,9 @@ export interface BaseProviderProps {
 export const BaseProvider = ({children}: BaseProviderProps) =>  
     <ThemeProvider theme={JspencTheme}>
       <Global styles={`
-        body{
+        body, body{
           margin:0; 
+          height: 100%;
         }
 
         @font-face {

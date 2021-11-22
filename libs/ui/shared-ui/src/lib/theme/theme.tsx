@@ -44,6 +44,8 @@ const componentDefaults = {
 
 const colors = {
   interactiveVisited010: '{}',
+  // https://coolors.co/161032-194163-1c7293-55a7bd-8edce6-9db7d3-e4dfda-d4b483-d5dcf9-f2f4f3
+  
 }
 
 export const JspencTheme = createTheme({

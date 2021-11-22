@@ -5,13 +5,35 @@ import {
   IconButton,
   IconFilledTwitter,
   styled,
+  getSpacingCssFromTheme,
+  IconFilledWbSunny,
+  IconFilledBedtime,
 } from 'newskit';
 import Link from 'next/link';
+import { useState } from 'react';
 import { Logo } from '../logo/logo';
 
 const HeaderContainer = styled.header`
-  margin-top: 16px;
+  ${getSpacingCssFromTheme('margin-top', "space040")};  
+  ${getSpacingCssFromTheme('margin-bottom', "space040")};
 `;
+
+const defaultButtonStyle = {overrides:{ stylePreset: 'iconButtonMinimalSecondary' } };
+const defaultIconSize = {overrides:{ size: 'iconSize030' }};
+
+const DayNightModeSwitch = () => {
+  const [isInDayMode, setDayNightMode] = useState(false);
+
+  const buttonProps = isInDayMode ?{
+    children : <IconFilledBedtime {...defaultIconSize}/>,
+    "aria-label" : "enable night mode"
+  } : {
+    children : <IconFilledWbSunny {...defaultIconSize}/>,
+    "aria-label" : "enable day mode"
+  }
+
+  return <IconButton {...buttonProps} {...defaultButtonStyle} onClick={() => setDayNightMode(!isInDayMode)} />  
+}
 
 export const Header = () => (
   <HeaderContainer>
@@ -28,18 +50,19 @@ export const Header = () => (
         <Stack flow="horizontal-center" spaceInline="space030">
           <IconButton
             aria-label="github"
-            overrides={{ stylePreset: 'iconButtonMinimalSecondary' }}
+            {...defaultButtonStyle}
             href="https://github.com/jps"
           >
-            <IconFilledGitHub overrides={{ size: 'iconSize030' }} />
+            <IconFilledGitHub {...defaultIconSize} />
           </IconButton>
           <IconButton
             aria-label="twitter"
-            overrides={{ stylePreset: 'iconButtonMinimalSecondary' }}
+            {...defaultButtonStyle}
             href="https://twitter.com/jpspenc"
           >
-            <IconFilledTwitter overrides={{ size: 'iconSize030' }} />
+            <IconFilledTwitter {...defaultIconSize} />
           </IconButton>
+          <DayNightModeSwitch/>
         </Stack>
       </Block>
     </Stack>
