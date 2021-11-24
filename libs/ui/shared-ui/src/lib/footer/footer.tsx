@@ -1,8 +1,8 @@
 import { Stack, TextBlock, styled, Divider, Block, getSpacingCssFromTheme } from 'newskit';
 
 const FooterContainer = styled.footer`
-  ${getSpacingCssFromTheme('margin-bottom', 'space030')};
-  ${getSpacingCssFromTheme('margin-top', 'space030')};
+  ${getSpacingCssFromTheme('marginBottom', 'space030')};
+  ${getSpacingCssFromTheme('marginTop', 'space030')};
 `;
 
 export const Footer = () => 

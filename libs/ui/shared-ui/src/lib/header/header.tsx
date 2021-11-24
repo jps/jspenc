@@ -8,32 +8,54 @@ import {
   getSpacingCssFromTheme,
   IconFilledWbSunny,
   IconFilledBedtime,
+  UncompiledTheme,
 } from 'newskit';
 import Link from 'next/link';
-import { useState } from 'react';
+import { ReactNode, useContext } from 'react';
+import { SiteThemeContext } from '../..';
 import { Logo } from '../logo/logo';
+import { JspencThemeDark, JspencThemeLight } from '../theme/theme';
 
 const HeaderContainer = styled.header`
-  ${getSpacingCssFromTheme('margin-top', "space040")};  
-  ${getSpacingCssFromTheme('margin-bottom', "space040")};
+  ${getSpacingCssFromTheme('marginTop', 'space040')};
+  ${getSpacingCssFromTheme('marginBottom', 'space040')};
 `;
 
-const defaultButtonStyle = {overrides:{ stylePreset: 'iconButtonMinimalSecondary' } };
-const defaultIconSize = {overrides:{ size: 'iconSize030' }};
+const defaultButtonStyle = {
+  overrides: { stylePreset: 'iconButtonMinimalSecondary' },
+};
+const defaultIconSize = { overrides: { size: 'iconSize030' } };
 
-const DayNightModeSwitch = () => {
-  const [isInDayMode, setDayNightMode] = useState(false);
+const DayNightModeToggle = () => {
+  const { theme, setTheme } = useContext(SiteThemeContext);
 
-  const buttonProps = isInDayMode ?{
-    children : <IconFilledBedtime {...defaultIconSize}/>,
-    "aria-label" : "enable night mode"
-  } : {
-    children : <IconFilledWbSunny {...defaultIconSize}/>,
-    "aria-label" : "enable day mode"
-  }
+  const isLightTheme = theme.name === JspencThemeLight.name;
 
-  return <IconButton {...buttonProps} {...defaultButtonStyle} onClick={() => setDayNightMode(!isInDayMode)} />  
-}
+  const createButton = (
+    children: ReactNode,
+    ariaLabel: string,
+    theme: UncompiledTheme
+  ) => (
+    <IconButton
+      children={children}
+      aria-label={ariaLabel}
+      onClick={() => {setTheme(theme)}}
+      {...defaultButtonStyle}
+    />
+  );
+
+  return isLightTheme
+    ? createButton(
+        <IconFilledBedtime {...defaultIconSize} />,
+        'enable night mode',
+        JspencThemeDark
+      )
+    : createButton(
+        <IconFilledWbSunny {...defaultIconSize} />,
+        'enable day mode',
+        JspencThemeLight
+      );
+};
 
 export const Header = () => (
   <HeaderContainer>
@@ -62,7 +84,7 @@ export const Header = () => (
           >
             <IconFilledTwitter {...defaultIconSize} />
           </IconButton>
-          <DayNightModeSwitch/>
+          <DayNightModeToggle />
         </Stack>
       </Block>
     </Stack>

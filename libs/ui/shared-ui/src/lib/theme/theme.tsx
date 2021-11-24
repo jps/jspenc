@@ -1,4 +1,9 @@
-import { createTheme, newskitLightTheme, StylePreset } from 'newskit';
+import {
+  createTheme,
+  newskitDarkThemeOverrides,
+  newskitLightTheme,
+  StylePreset,
+} from 'newskit';
 
 export const fonts = {
   fontFamily010: {
@@ -45,11 +50,10 @@ const componentDefaults = {
 const colors = {
   interactiveVisited010: '{}',
   // https://coolors.co/161032-194163-1c7293-55a7bd-8edce6-9db7d3-e4dfda-d4b483-d5dcf9-f2f4f3
-  
-}
+};
 
-export const JspencTheme = createTheme({
-  name: 'jspenc',
+export const JspencThemeLight = createTheme({
+  name: 'jspenc-light',
   baseTheme: newskitLightTheme,
   overrides: {
     colors: colors,
@@ -57,4 +61,16 @@ export const JspencTheme = createTheme({
     componentDefaults: componentDefaults,
     stylePresets: stylePresets,
   },
+});
+
+const jspencDarkThemeOverrides = {
+  colors: {
+    //TODO: add custom dark theme colors
+  },
+};
+
+export const JspencThemeDark = createTheme({
+  name: 'jspenc-dark',
+  baseTheme: JspencThemeLight,
+  overrides: { ...newskitDarkThemeOverrides, ...jspencDarkThemeOverrides },
 });
