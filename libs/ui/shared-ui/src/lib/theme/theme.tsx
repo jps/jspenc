@@ -65,7 +65,7 @@ export const JspencThemeLight = createTheme({
 
 const jspencDarkThemeOverrides = {
   colors: {
-    //TODO: add custom dark theme colors
+    interfaceBackground: '#000000',
   },
 };
 

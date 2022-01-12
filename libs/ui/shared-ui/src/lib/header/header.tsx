@@ -27,9 +27,8 @@ const defaultButtonStyle = {
 const defaultIconSize = { overrides: { size: 'iconSize030' } };
 
 const DayNightModeToggle = () => {
-  const { theme, setTheme } = useContext(SiteThemeContext);
-
-  const isLightTheme = theme.name === JspencThemeLight.name;
+  const { currentTheme, toggleTheme } = useContext(SiteThemeContext);
+  const isLightTheme = currentTheme.name === JspencThemeLight.name;
 
   const createButton = (
     children: ReactNode,
@@ -39,7 +38,9 @@ const DayNightModeToggle = () => {
     <IconButton
       children={children}
       aria-label={ariaLabel}
-      onClick={() => {setTheme(theme)}}
+      onClick={() => {
+        toggleTheme();
+      }}
       {...defaultButtonStyle}
     />
   );
