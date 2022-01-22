@@ -33,10 +33,22 @@ export const fonts = {
 };
 
 const stylePresets: Record<string, StylePreset> = {
+  inkBase: {
+    base: {
+      color: '{{colors.inkBase}}',
+      iconColor: '{{colors.inkBase}}',
+    },
+  },
   titleBar: {
     base: {
       borderWidth: '0 0 1px 0',
       borderStyle: 'solid',
+      color: '{{colors.inkBase}}',
+    },
+  },
+  cardContainer: {
+    base: {
+      backgroundColor: 'unset',
     },
   },
 };
@@ -44,6 +56,9 @@ const stylePresets: Record<string, StylePreset> = {
 const componentDefaults = {
   titleBar: {
     spaceInset: 'space000',
+    heading: {
+      stylePresets: 'inkBase',
+    },
   },
 };
 
@@ -66,6 +81,7 @@ export const JspencThemeLight = createTheme({
 const jspencDarkThemeOverrides = {
   colors: {
     interfaceBackground: '#000000',
+    inkBase: '#B8A9A9',
   },
 };
 

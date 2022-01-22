@@ -16,7 +16,10 @@ type MediaCardPropsWithOptionalHref = Omit<MediaCardProps, 'href'> & {
 const CardWrapped = forwardRef<any, MediaCardPropsWithOptionalHref>(
   ({ children, headline, href }, ref) => (
     <div ref={ref}>
-      <Card layout="vertical" href={href}>
+      <Card
+        layout="vertical"
+        href={href ? { href: href, target: '_blank' } : undefined}
+      >
         <Stack flow="vertical-left" spaceInline="space040">
           <Headline headingAs="h3">{headline}</Headline>
           <TextBlock typographyPreset="editorialParagraph020">

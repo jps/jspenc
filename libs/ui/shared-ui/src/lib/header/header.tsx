@@ -8,13 +8,12 @@ import {
   getSpacingCssFromTheme,
   IconFilledWbSunny,
   IconFilledBedtime,
-  UncompiledTheme,
 } from 'newskit';
 import Link from 'next/link';
 import { ReactNode, useContext } from 'react';
 import { SiteThemeContext } from '../..';
 import { Logo } from '../logo/logo';
-import { JspencThemeDark, JspencThemeLight } from '../theme/theme';
+import { JspencThemeLight } from '../theme/theme';
 
 const HeaderContainer = styled.header`
   ${getSpacingCssFromTheme('marginTop', 'space040')};
@@ -32,9 +31,7 @@ const DayNightModeToggle = () => {
 
   const createButton = (
     children: ReactNode,
-    ariaLabel: string,
-    theme: UncompiledTheme
-  ) => (
+    ariaLabel: string  ) => (
     <IconButton
       children={children}
       aria-label={ariaLabel}
@@ -48,13 +45,11 @@ const DayNightModeToggle = () => {
   return isLightTheme
     ? createButton(
         <IconFilledBedtime {...defaultIconSize} />,
-        'enable night mode',
-        JspencThemeDark
+        'enable night mode'
       )
     : createButton(
         <IconFilledWbSunny {...defaultIconSize} />,
-        'enable day mode',
-        JspencThemeLight
+        'enable day mode'
       );
 };
 

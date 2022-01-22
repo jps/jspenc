@@ -13,7 +13,8 @@ const Section = styled.section`
 export const MediaCardList = ({title, cards}: MediaCardListProps) => (
   <Section>
     <Block spaceStack="space060">
-      <TitleBar headingAs="h2">{title}</TitleBar>
+      {/* This inline override has been added due to a bug in the title bar */}
+      <TitleBar headingAs="h2" overrides={{heading:{stylePreset:'inkBase'}}}>{title}</TitleBar>
     </Block>
     <Stack flow="vertical-left" spaceInline="space060" list>
       {cards.map((article, i) => (

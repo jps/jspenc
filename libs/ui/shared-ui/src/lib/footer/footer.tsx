@@ -11,7 +11,7 @@ export const Footer = () =>
       <Divider/>
     </Block>
     <Stack flow="horizontal-center" stackDistribution="flex-end">
-      <TextBlock typographyPreset="utilityBody010">
+      <TextBlock typographyPreset="utilityBody010" stylePreset="inkBase">
       James Spencer {new Date().getFullYear()} &copy;
       </TextBlock>
     </Stack>
