@@ -1,5 +1,5 @@
 import { ThemeProvider, UncompiledTheme, Global, useTheme } from 'newskit';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { JspencThemeDark, JspencThemeLight } from '../theme/theme';
 
 /* eslint-disable-next-line */
@@ -24,21 +24,50 @@ type SiteThemeProviderProps = {
 };
 
 export const SiteThemeProvider = ({ children }: SiteThemeProviderProps) => {
-  const [theme, setTheme] = useState<UncompiledTheme>(JspencThemeLight);
-  const isLightTheme = theme.name === JspencThemeLight.name;
+  const themes = new Map([
+    [JspencThemeLight.name, JspencThemeLight],
+    [JspencThemeDark.name, JspencThemeDark],
+  ]);
+  const [currentTheme, setCurrentTheme] =
+    useState<UncompiledTheme>(JspencThemeLight);
+  const isLightTheme = currentTheme.name === JspencThemeLight.name;
+
+  const setTheme = (theme: UncompiledTheme) => {
+    setCurrentTheme(theme);
+    localStorage.setItem('theme', theme.name);
+  };
+
   const toggleTheme = () => {
     if (isLightTheme) {
       setTheme(JspencThemeDark);
-    } else {
-      setTheme(JspencThemeLight);
+      return;
     }
+    setTheme(JspencThemeLight);
   };
 
-  const providerValue = { currentTheme: theme, toggleTheme: toggleTheme };
+  useEffect(() => {
+    const userThemeKey = localStorage.getItem('theme');
+    if (userThemeKey) {
+      const userTheme = themes.get(userThemeKey);
+      if (userTheme) {
+        setTheme(userTheme);
+        return;
+      }
+    }
+
+    if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
+      setTheme(JspencThemeDark);
+    }
+  }, []);
+
+  const providerValue = {
+    currentTheme: currentTheme,
+    toggleTheme: toggleTheme,
+  };
 
   return (
     <SiteThemeContext.Provider value={providerValue}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
     </SiteThemeContext.Provider>
   );
 };

@@ -2,7 +2,7 @@ import { MediaListData } from "./types";
 
 export const projects : Array<MediaListData> = [{
     href: "https://newskit.co.uk",
-    headline: "NewsKit - News Corp Design System",
+    headline: "NewsKit - News Corp's Design System",
     body : "NewsKit is News Corps design system, it is a multi-brand design system build from the ground up using ReactJs and emotion."
   },{
     href: "https://www.moonpig.com",
