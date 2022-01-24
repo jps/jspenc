@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { BaseProvider, Header, Footer } from '@jspenc/ui/shared-ui';
+import { BaseProvider, Header, Footer, GlobalStyles } from '@jspenc/ui/shared-ui';
 import { Cell, Grid, styled } from 'newskit';
 import React from 'react';
 
@@ -22,6 +22,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
         <title>James Spencer</title>
       </Head>
       <BaseProvider>
+        <GlobalStyles />
         <Grid>
           <FullHeightCell
             xs={12}
