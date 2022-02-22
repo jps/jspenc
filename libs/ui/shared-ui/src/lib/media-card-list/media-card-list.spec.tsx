@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-
+import { renderWithTheme } from '../testing-utils';
 import { MediaCardList } from './media-card-list';
 
 const mediaCardListProps = [ {
@@ -10,7 +9,7 @@ const mediaCardListProps = [ {
 
 describe('MediaCardList', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<MediaCardList title="Content" cards={mediaCardListProps} />);
+    const { baseElement } = renderWithTheme(<MediaCardList title="Content" cards={mediaCardListProps} />);
     expect(baseElement).toMatchSnapshot();
   });
 });

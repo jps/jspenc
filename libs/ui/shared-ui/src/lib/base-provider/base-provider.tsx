@@ -1,85 +1,63 @@
-import { Global } from '@emotion/react';
-import { ThemeProvider } from 'newskit';
-import { JspencTheme } from '../theme/theme';
+import { ThemeProvider, UncompiledTheme } from 'newskit';
+import { createContext, useEffect, useState } from 'react';
+import { JspencThemeDark, JspencThemeLight } from '../theme/theme';
 
-/* eslint-disable-next-line */
 export interface BaseProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export const BaseProvider = ({children}: BaseProviderProps) =>  
-    <ThemeProvider theme={JspencTheme}>
-      <Global styles={`
-        body{
-          margin:0; 
-        }
+export type SiteThemeContext = {
+  currentTheme: UncompiledTheme;
+  toggleTheme: () => void;
+};
 
-        @font-face {
-          font-family: 'DM Sans';
-          src: url('/fonts/dmsans-regular.woff2')
-              format('woff2');
-          font-style: normal;
-          font-weight: 400;
-          font-display: swap;
-        }
-        @font-face {
-          font-family: 'DM Sans';
-          src: url('/fonts/dmsans-italic.woff2')
-              format('woff2');
-          font-style: italic;
-          font-weight: 400;
-          font-display: swap;
-        }
-        @font-face {
-          font-family: 'DM Sans';
-          src: url('/fonts/dmsans-bold.woff2')
-              format('woff2');
-          font-style: normal;
-          font-weight: 700;
-          font-display: swap;
-        }
-        @font-face {
-          font-family: 'DM Sans';
-          src: url('/fonts/dmsans-bolditalic.woff2')
-              format('woff2');
-          font-style: italic;
-          font-weight: 700;
-          font-display: swap;
-        }
-        
-        @font-face {
-          font-family: 'Raleway';
-          src: url('/fonts/raleway-light.woff2')
-              format('woff2');
-          font-style: normal;
-          font-weight: 300;
-          font-display: swap;
-        }
-        @font-face {
-          font-family: 'Raleway';
-          src: url('/fonts/raleway-lightItalic.woff2')
-              format('woff2');
-          font-style: italic;
-          font-weight: 300;
-          font-display: swap;
-        }
-        @font-face {
-          font-family: 'Raleway';
-          src: url('/fonts/raleway-semibold.woff2')
-              format('woff2');
-          font-style: normal;
-          font-weight: 600;
-          font-display: swap;
-        }
-        @font-face {
-          font-family: 'Raleway';
-          src: url('/fonts/raleway-semibolditalic.woff2')
-              format('woff2');
-          font-style: italic;
-          font-weight: 600;
-          font-display: swap;
-        }
-      `} />
+export const SiteThemeContext = createContext<SiteThemeContext>({
+  currentTheme: JspencThemeLight,
+  toggleTheme: () => {
+    console.error('undefined, I should never be executed');
+  },
+});
 
-      {children}
-    </ThemeProvider>;
+const themes = new Map([
+  [JspencThemeLight.name, JspencThemeLight],
+  [JspencThemeDark.name, JspencThemeDark],
+]);
+
+export const BaseProvider = ({ children }: BaseProviderProps) => {
+
+  const [currentTheme, setCurrentTheme] = useState<UncompiledTheme>(JspencThemeLight);
+  const isLightTheme = currentTheme.name === JspencThemeLight.name;
+
+  const setTheme = (theme: UncompiledTheme) => {
+    setCurrentTheme(theme);
+    localStorage.setItem('theme', theme.name);
+  };
+
+  const toggleTheme = () =>  setTheme(isLightTheme ? JspencThemeDark : JspencThemeLight);
+
+  useEffect(() => {
+    const userThemeKey = localStorage.getItem('theme');
+    if (userThemeKey) {
+      const userTheme = themes.get(userThemeKey);
+      if (userTheme) {
+        setTheme(userTheme);
+        return;
+      }
+    }
+
+    if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
+      setTheme(JspencThemeDark);
+    }
+  }, []);
+
+  const providerValue = {
+    currentTheme: currentTheme,
+    toggleTheme: toggleTheme,
+  };
+
+  return (
+    <SiteThemeContext.Provider value={providerValue}>
+      <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
+    </SiteThemeContext.Provider>
+  );
+};

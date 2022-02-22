@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaCardList should render successfully 1`] = `
+<body>
+  <div>
+    <section
+      class="css-sxfrcw"
+    >
+      <div
+        class="css-1r3hoet"
+      >
+        <div
+          class="css-1qdltth"
+        >
+          <div
+            class="css-151qm6o"
+          >
+            <section
+              class="css-13e55qw"
+            >
+              <h2
+                class="nk-headline-heading css-1qhitfs"
+              >
+                Content
+              </h2>
+            </section>
+          </div>
+        </div>
+      </div>
+      <ul
+        class="css-qtuc0p"
+      >
+        <li
+          class="css-1cj9kmv"
+        >
+          <div>
+            <div
+              class="css-10n9oie"
+            >
+              <div
+                class="css-1shocxe"
+              >
+                <div
+                  class="css-1a2irou"
+                >
+                  <div
+                    class="css-15bubm0"
+                  >
+                    <div
+                      class="css-zodxql"
+                    >
+                      <a
+                        class="nk-card-link css-1h8m54y"
+                        href="https://jspenc.com"
+                        target="_blank"
+                      >
+                        <section
+                          class="css-1mlnvu4"
+                        >
+                          <h3
+                            class="nk-headline-heading css-cjz1e9"
+                          >
+                            Jspenc
+                          </h3>
+                        </section>
+                      </a>
+                    </div>
+                    <div
+                      class="css-zodxql"
+                    >
+                      <p
+                        class="css-xpnluc"
+                      >
+                        lorem ipsum
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>
+`;

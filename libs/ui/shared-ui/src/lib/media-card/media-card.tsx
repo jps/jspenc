@@ -13,10 +13,13 @@ type MediaCardPropsWithOptionalHref = Omit<MediaCardProps, 'href'> & {
 };
 
 //TODO: big dirty hack, thanks for this next.js... https://github.com/vercel/next.js/issues/7915
-const CardWrapped = forwardRef<any, MediaCardPropsWithOptionalHref>(
+const CardWrapped = forwardRef<HTMLDivElement, MediaCardPropsWithOptionalHref>(
   ({ children, headline, href }, ref) => (
     <div ref={ref}>
-      <Card layout="vertical" href={href}>
+      <Card
+        layout="vertical"
+        href={href ? { href: href, target: '_blank' } : undefined}
+      >
         <Stack flow="vertical-left" spaceInline="space040">
           <Headline headingAs="h3">{headline}</Headline>
           <TextBlock typographyPreset="editorialParagraph020">

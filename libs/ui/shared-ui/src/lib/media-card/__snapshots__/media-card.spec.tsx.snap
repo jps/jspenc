@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaCard should render successfully 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="css-10n9oie"
+      >
+        <div
+          class="css-1shocxe"
+        >
+          <div
+            class="css-1a2irou"
+          >
+            <div
+              class="css-15bubm0"
+            >
+              <div
+                class="css-zodxql"
+              >
+                <a
+                  class="nk-card-link css-1h8m54y"
+                  href="/#"
+                  target="_blank"
+                >
+                  <section
+                    class="css-1mlnvu4"
+                  >
+                    <h3
+                      class="nk-headline-heading css-cjz1e9"
+                    >
+                      Test Card
+                    </h3>
+                  </section>
+                </a>
+              </div>
+              <div
+                class="css-zodxql"
+              >
+                <p
+                  class="css-xpnluc"
+                >
+                  lorem ipsum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

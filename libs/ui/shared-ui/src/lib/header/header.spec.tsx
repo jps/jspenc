@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../teting-utils/render-with-theme';
+import { renderWithTheme } from '../testing-utils/render-with-theme';
 
 import { Header } from './header';
 
