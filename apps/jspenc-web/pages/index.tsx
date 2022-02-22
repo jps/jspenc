@@ -14,8 +14,7 @@ const projectsAsMediaCardData = projects.map(({ body, ...rest }) => {
 
 export function Index() {
   return (   
-    <Stack spaceInline="space060" flow="vertical-stretch">
-      <StackChild  />
+    <Stack spaceInline="space060" flow="vertical-stretch">      
       <TextBlock typographyPreset="utilityBody030" stylePreset="inkBase">
           Welcome to my corner of the internet, there&apos;s not much here at
           the moment but do feel free to browse some of my writing. or get in{' '}

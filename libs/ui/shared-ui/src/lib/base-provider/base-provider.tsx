@@ -2,7 +2,6 @@ import { ThemeProvider, UncompiledTheme } from 'newskit';
 import { createContext, useEffect, useState } from 'react';
 import { JspencThemeDark, JspencThemeLight } from '../theme/theme';
 
-/* eslint-disable-next-line */
 export interface BaseProviderProps {
   children: React.ReactNode;
 }
@@ -19,17 +18,14 @@ export const SiteThemeContext = createContext<SiteThemeContext>({
   },
 });
 
-type SiteThemeProviderProps = {
-  children: React.ReactNode;
-};
+const themes = new Map([
+  [JspencThemeLight.name, JspencThemeLight],
+  [JspencThemeDark.name, JspencThemeDark],
+]);
 
-export const SiteThemeProvider = ({ children }: SiteThemeProviderProps) => {
-  const themes = new Map([
-    [JspencThemeLight.name, JspencThemeLight],
-    [JspencThemeDark.name, JspencThemeDark],
-  ]);
-  const [currentTheme, setCurrentTheme] =
-    useState<UncompiledTheme>(JspencThemeLight);
+export const BaseProvider = ({ children }: BaseProviderProps) => {
+
+  const [currentTheme, setCurrentTheme] = useState<UncompiledTheme>(JspencThemeLight);
   const isLightTheme = currentTheme.name === JspencThemeLight.name;
 
   const setTheme = (theme: UncompiledTheme) => {
@@ -37,13 +33,7 @@ export const SiteThemeProvider = ({ children }: SiteThemeProviderProps) => {
     localStorage.setItem('theme', theme.name);
   };
 
-  const toggleTheme = () => {
-    if (isLightTheme) {
-      setTheme(JspencThemeDark);
-      return;
-    }
-    setTheme(JspencThemeLight);
-  };
+  const toggleTheme = () =>  setTheme(isLightTheme ? JspencThemeDark : JspencThemeLight);
 
   useEffect(() => {
     const userThemeKey = localStorage.getItem('theme');
@@ -69,13 +59,5 @@ export const SiteThemeProvider = ({ children }: SiteThemeProviderProps) => {
     <SiteThemeContext.Provider value={providerValue}>
       <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
     </SiteThemeContext.Provider>
-  );
-};
-
-export const BaseProvider = ({ children }: BaseProviderProps) => {
-  return (
-    <SiteThemeProvider>
-      {children}
-    </SiteThemeProvider>
   );
 };
