@@ -6,9 +6,10 @@ import {
   IconFilledTwitter,
   styled,
   getSpacingCssFromTheme,
-  IconFilledWbSunny,
-  IconFilledBedtime,
+  toNewsKitIcon,
 } from 'newskit';
+import { WeatherMoon } from '@emotion-icons/fluentui-system-filled/WeatherMoon';
+import { WeatherSunny } from '@emotion-icons/fluentui-system-filled/WeatherSunny'
 import Link from 'next/link';
 import { ReactNode, useContext } from 'react';
 import { SiteThemeContext } from '../..';
@@ -25,10 +26,13 @@ const defaultButtonStyle = {
 };
 const defaultIconSize = { overrides: { size: 'iconSize030' } };
 
+const MoonIcon = toNewsKitIcon(WeatherMoon);
+const SunIcon = toNewsKitIcon(WeatherSunny);
+
 const DayNightModeToggle = () => {
   const { currentTheme, toggleTheme } = useContext(SiteThemeContext);
   const isLightTheme = currentTheme.name === JspencThemeLight.name;
-
+  
   const createButton = (
     children: ReactNode,
     ariaLabel: string  ) => (
@@ -44,11 +48,11 @@ const DayNightModeToggle = () => {
 
   return isLightTheme
     ? createButton(
-        <IconFilledBedtime {...defaultIconSize} />,
+        <MoonIcon {...defaultIconSize} />,
         'enable night mode'
       )
     : createButton(
-        <IconFilledWbSunny {...defaultIconSize} />,
+        <SunIcon {...defaultIconSize} />,
         'enable day mode'
       );
 };
