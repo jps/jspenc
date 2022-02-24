@@ -1,5 +1,5 @@
 import { MediaCardList } from '@jspenc/ui/shared-ui';
-import { Stack, StackChild, TextBlock } from 'newskit';
+import { Stack, TextBlock } from 'newskit';
 import React from 'react';
 import { projects } from '../content';
 import { writing } from '../content/writing';
