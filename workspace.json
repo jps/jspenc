@@ -8,7 +8,9 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "root": "apps/jspenc-web",
             "outputPath": "dist/apps/jspenc-web"
@@ -38,7 +40,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/jspenc-web"],
+          "outputs": [
+            "coverage/apps/jspenc-web"
+          ],
           "options": {
             "jestConfig": "apps/jspenc-web/jest.config.js",
             "passWithNoTests": true
@@ -47,9 +51,13 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/jspenc-web/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/jspenc-web/**/*.{ts,tsx,js,jsx}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         }
       },
       "tags": []
@@ -75,13 +83,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/jspenc-web-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/jspenc-web-e2e/**/*.{js,ts}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         }
       },
       "tags": [],
-      "implicitDependencies": ["jspenc-web"]
+      "implicitDependencies": [
+        "jspenc-web"
+      ]
     },
     "ui-shared-ui": {
       "root": "libs/ui/shared-ui",
@@ -91,13 +105,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ui/shared-ui/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "libs/ui/shared-ui/**/*.{ts,tsx,js,jsx}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/shared-ui"],
+          "outputs": [
+            "coverage/libs/ui/shared-ui"
+          ],
           "options": {
             "jestConfig": "libs/ui/shared-ui/jest.config.js",
             "passWithNoTests": true
@@ -107,7 +127,9 @@
           "executor": "@nrwl/storybook:storybook",
           "options": {
             "uiFramework": "@storybook/react",
-            "staticDir": ["./apps/jspenc-web/public/"],
+            "staticDir": [
+              "./apps/jspenc-web/public/"
+            ],
             "port": 4400,
             "config": {
               "configFolder": "libs/ui/shared-ui/.storybook"
@@ -121,7 +143,9 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/ui-shared-ui",
@@ -159,9 +183,13 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/ui-shared-ui-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/ui-shared-ui-e2e/**/*.{js,ts}"
+            ]
           },
-          "outputs": ["{options.outputFile}"]
+          "outputs": [
+            "{options.outputFile}"
+          ]
         },
         "storybook": {
           "executor": "@nrwl/storybook:storybook",
@@ -180,7 +208,9 @@
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/ui-shared-ui-e2e",
@@ -196,7 +226,9 @@
         }
       },
       "tags": [],
-      "implicitDependencies": ["ui-shared-ui"]
+      "implicitDependencies": [
+        "ui-shared-ui"
+      ]
     }
   }
 }
