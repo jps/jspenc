@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "jspenc-web": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/jspenc-web",
       "sourceRoot": "apps/jspenc-web",
       "projectType": "application",
@@ -16,8 +17,12 @@
             "outputPath": "dist/apps/jspenc-web"
           },
           "configurations": {
-            "production": {}
-          }
+            "production": {},
+            "development": {
+              "outputPath": "tmp/apps/jspenc-web"
+            }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "executor": "@nrwl/next:server",
@@ -29,8 +34,13 @@
             "production": {
               "buildTarget": "jspenc-web:build:production",
               "dev": false
+            },
+            "development": {
+              "buildTarget": "jspenc-web:build:development",
+              "dev": true
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "export": {
           "executor": "@nrwl/next:export",
@@ -44,7 +54,7 @@
             "coverage/apps/jspenc-web"
           ],
           "options": {
-            "jestConfig": "apps/jspenc-web/jest.config.js",
+            "jestConfig": "apps/jspenc-web/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -63,6 +73,7 @@
       "tags": []
     },
     "jspenc-web-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/jspenc-web-e2e",
       "sourceRoot": "apps/jspenc-web-e2e/src",
       "projectType": "application",
@@ -98,6 +109,7 @@
       ]
     },
     "ui-shared-ui": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "libs/ui/shared-ui",
       "sourceRoot": "libs/ui/shared-ui/src",
       "projectType": "library",
@@ -119,7 +131,7 @@
             "coverage/libs/ui/shared-ui"
           ],
           "options": {
-            "jestConfig": "libs/ui/shared-ui/jest.config.js",
+            "jestConfig": "libs/ui/shared-ui/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -163,6 +175,7 @@
       "tags": []
     },
     "ui-shared-ui-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/ui-shared-ui-e2e",
       "sourceRoot": "apps/ui-shared-ui-e2e/src",
       "projectType": "application",
@@ -230,5 +243,6 @@
         "ui-shared-ui"
       ]
     }
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

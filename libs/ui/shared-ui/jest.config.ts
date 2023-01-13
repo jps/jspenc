@@ -1,4 +1,6 @@
-module.exports = {
+/* eslint-disable */
+/* eslint-disable */
+export default {
   displayName: 'ui-shared-ui',
   preset: '../../../jest.preset.js',
   transform: {

@@ -13,10 +13,10 @@ exports[`MediaCardList should render successfully 1`] = `
           class="css-1qdltth"
         >
           <div
-            class="css-151qm6o"
+            class="css-1edp8de"
           >
             <section
-              class="css-13e55qw"
+              class="css-1eqp48b"
             >
               <h2
                 class="nk-headline-heading css-1qhitfs"
@@ -55,7 +55,7 @@ exports[`MediaCardList should render successfully 1`] = `
                         target="_blank"
                       >
                         <section
-                          class="css-1mlnvu4"
+                          class="css-4peoqn"
                         >
                           <h3
                             class="nk-headline-heading css-cjz1e9"
@@ -69,7 +69,7 @@ exports[`MediaCardList should render successfully 1`] = `
                       class="css-zodxql"
                     >
                       <p
-                        class="css-xpnluc"
+                        class="css-1ffe19o"
                       >
                         lorem ipsum
                       </p>
