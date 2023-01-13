@@ -4,7 +4,7 @@ const toPath = (_path) => path.join(process.cwd(), _path)
 
 module.exports = {
   stories: [],
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-actions'],
   webpackFinal: async (config) => {
     return {
       ...config,

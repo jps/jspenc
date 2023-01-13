@@ -25,7 +25,7 @@ exports[`MediaCard should render successfully 1`] = `
                   target="_blank"
                 >
                   <section
-                    class="css-1mlnvu4"
+                    class="css-4peoqn"
                   >
                     <h3
                       class="nk-headline-heading css-cjz1e9"
@@ -39,7 +39,7 @@ exports[`MediaCard should render successfully 1`] = `
                 class="css-zodxql"
               >
                 <p
-                  class="css-xpnluc"
+                  class="css-1ffe19o"
                 >
                   lorem ipsum.
                 </p>
