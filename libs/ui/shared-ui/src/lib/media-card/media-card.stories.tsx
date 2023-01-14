@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 import { BaseProvider } from '../..';
-import { MediaCard, MediaCardProps } from './media-card';
+import { MediaCard } from './media-card';
 
 export default {
   component: MediaCard,
