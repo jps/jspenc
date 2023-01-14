@@ -1,4 +1,4 @@
-import { ThemeProvider, UncompiledTheme } from 'newskit';
+import { NewsKitProvider, UncompiledTheme } from 'newskit';
 import { createContext, useEffect, useState } from 'react';
 import { JspencThemeDark, JspencThemeLight } from '../theme/theme';
 
@@ -57,7 +57,7 @@ export const BaseProvider = ({ children }: BaseProviderProps) => {
 
   return (
     <SiteThemeContext.Provider value={providerValue}>
-      <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
+      <NewsKitProvider theme={currentTheme}>{children}</NewsKitProvider>
     </SiteThemeContext.Provider>
   );
 };
