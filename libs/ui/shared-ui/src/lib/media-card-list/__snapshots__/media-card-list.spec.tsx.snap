@@ -7,19 +7,19 @@ exports[`MediaCardList should render successfully 1`] = `
       class="css-sxfrcw"
     >
       <div
-        class="css-1r3hoet"
+        class="css-38y4ob"
       >
         <div
-          class="css-1qdltth"
+          class="css-1o36xz5"
         >
           <div
-            class="css-1edp8de"
+            class="css-dzecoh"
           >
             <section
-              class="css-1eqp48b"
+              class="css-14c5c7z"
             >
               <h2
-                class="nk-headline-heading css-1qhitfs"
+                class="nk-headline-heading css-17onjfr"
               >
                 Content
               </h2>
@@ -28,37 +28,37 @@ exports[`MediaCardList should render successfully 1`] = `
         </div>
       </div>
       <ul
-        class="css-qtuc0p"
+        class="css-19hpv4g"
       >
         <li
-          class="css-1cj9kmv"
+          class="css-1200oy4"
         >
           <div>
             <div
-              class="css-10n9oie"
+              class="css-1m0fc5"
             >
               <div
                 class="css-1shocxe"
               >
                 <div
-                  class="css-1a2irou"
+                  class="css-u3mic"
                 >
                   <div
-                    class="css-15bubm0"
+                    class="css-x5nivz"
                   >
                     <div
-                      class="css-zodxql"
+                      class="css-n925f3"
                     >
                       <a
-                        class="nk-card-link css-1h8m54y"
+                        class="nk-card-link css-12rz4zb"
                         href="https://jspenc.com"
                         target="_blank"
                       >
                         <section
-                          class="css-4peoqn"
+                          class="css-kqlwu2"
                         >
                           <h3
-                            class="nk-headline-heading css-cjz1e9"
+                            class="nk-headline-heading css-1qyizy8"
                           >
                             Jspenc
                           </h3>
@@ -66,10 +66,10 @@ exports[`MediaCardList should render successfully 1`] = `
                       </a>
                     </div>
                     <div
-                      class="css-zodxql"
+                      class="css-n925f3"
                     >
                       <p
-                        class="css-1ffe19o"
+                        class="css-1as828z"
                       >
                         lorem ipsum
                       </p>
