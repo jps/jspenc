@@ -5,30 +5,30 @@ exports[`MediaCard should render successfully 1`] = `
   <div>
     <div>
       <div
-        class="css-10n9oie"
+        class="css-1m0fc5"
       >
         <div
           class="css-1shocxe"
         >
           <div
-            class="css-1a2irou"
+            class="css-u3mic"
           >
             <div
-              class="css-15bubm0"
+              class="css-x5nivz"
             >
               <div
-                class="css-zodxql"
+                class="css-n925f3"
               >
                 <a
-                  class="nk-card-link css-1h8m54y"
+                  class="nk-card-link css-12rz4zb"
                   href="/#"
                   target="_blank"
                 >
                   <section
-                    class="css-4peoqn"
+                    class="css-kqlwu2"
                   >
                     <h3
-                      class="nk-headline-heading css-cjz1e9"
+                      class="nk-headline-heading css-1qyizy8"
                     >
                       Test Card
                     </h3>
@@ -36,10 +36,10 @@ exports[`MediaCard should render successfully 1`] = `
                 </a>
               </div>
               <div
-                class="css-zodxql"
+                class="css-n925f3"
               >
                 <p
-                  class="css-1ffe19o"
+                  class="css-1as828z"
                 >
                   lorem ipsum.
                 </p>

@@ -1,15 +1,14 @@
 import {
   Block,
-  IconFilledGitHub,
   Stack,
   IconButton,
-  IconFilledTwitter,
   styled,
   getSpacingCssFromTheme,
   toNewsKitIcon,
 } from 'newskit';
+import { IconFilledGitHub, IconFilledTwitter } from './../icons';
 import { WeatherMoon } from '@emotion-icons/fluentui-system-filled/WeatherMoon';
-import { WeatherSunny } from '@emotion-icons/fluentui-system-filled/WeatherSunny'
+import { WeatherSunny } from '@emotion-icons/fluentui-system-filled/WeatherSunny';
 import Link from 'next/link';
 import { ReactNode, useContext } from 'react';
 import { SiteThemeContext } from '../..';
@@ -32,10 +31,8 @@ const SunIcon = toNewsKitIcon(WeatherSunny);
 const DayNightModeToggle = () => {
   const { currentTheme, toggleTheme } = useContext(SiteThemeContext);
   const isLightTheme = currentTheme.name === JspencThemeLight.name;
-  
-  const createButton = (
-    children: ReactNode,
-    ariaLabel: string  ) => (
+
+  const createButton = (children: ReactNode, ariaLabel: string) => (
     <IconButton
       children={children}
       aria-label={ariaLabel}
@@ -47,14 +44,8 @@ const DayNightModeToggle = () => {
   );
 
   return isLightTheme
-    ? createButton(
-        <MoonIcon {...defaultIconSize} />,
-        'enable night mode'
-      )
-    : createButton(
-        <SunIcon {...defaultIconSize} />,
-        'enable day mode'
-      );
+    ? createButton(<MoonIcon {...defaultIconSize} />, 'enable night mode')
+    : createButton(<SunIcon {...defaultIconSize} />, 'enable day mode');
 };
 
 export const Header = () => (
