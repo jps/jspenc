@@ -135,5 +135,8 @@ exports[`Header should render successfully 1`] = `
       </div>
     </header>
   </div>
+  <div
+    class="nk-layer-organizer"
+  />
 </body>
 `;
