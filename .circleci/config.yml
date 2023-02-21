@@ -3,6 +3,11 @@
 # and using workspace persistence
 version: 2.1
 
+parameters:
+  node-version:
+    type: string
+    default : "16.19.1"
+
 orbs:
   node: circleci/node@4.7.0
   # The S3 orb will setup the aws-cli and quickly copy or sync anything to s3.
@@ -28,18 +33,18 @@ workflows:
       - node/test:
           name: test
           pkg-manager: yarn
-          version: '16.7.0'
+          version: <<pipeline.parameters.node-version>>
           requires:
             - lint
       - node/run:
           name: build
           pkg-manager: yarn 
           yarn-run: build
-          version: '16.7.0'  
+          version: <<pipeline.parameters.node-version>>
           requires:
             - test
       - node/run:
           name: lint
           pkg-manager: yarn 
           yarn-run: affected:lint
-          version: '16.7.0'
+          version: <<pipeline.parameters.node-version>>
