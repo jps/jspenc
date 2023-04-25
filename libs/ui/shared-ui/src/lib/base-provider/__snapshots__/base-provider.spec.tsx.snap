@@ -7,5 +7,12 @@ exports[`BaseProvider should render successfully 1`] = `
       Content is passed through
     </span>
   </div>
+  <div
+    class="nk-layer-organizer"
+  >
+    <div
+      class="nk-layer-organizer"
+    />
+  </div>
 </body>
 `;

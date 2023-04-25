@@ -17,7 +17,7 @@ orbs:
   # See here https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project
   aws-s3: circleci/aws-s3@2.0
 
-jobs:  
+jobs:
   restore:
     docker:
       - image: cimg/node:<< pipeline.parameters.node_version >>
@@ -34,17 +34,18 @@ workflows:
           name: test
           pkg-manager: yarn
           version: << pipeline.parameters.node_version >>
+          run-command: test
           requires:
             - lint
       - node/run:
           name: build
-          pkg-manager: yarn 
+          pkg-manager: yarn
           yarn-run: build
           version: << pipeline.parameters.node_version >>
           requires:
             - test
       - node/run:
           name: lint
-          pkg-manager: yarn 
+          pkg-manager: yarn
           yarn-run: affected:lint
           version: << pipeline.parameters.node_version >>
