@@ -6,41 +6,39 @@ exports[`MediaCard should render successfully 1`] = `
     <a
       href="#"
     >
-      <div>
+      <div
+        class="css-1m0fc5"
+      >
         <div
-          class="css-1m0fc5"
+          class="css-1shocxe"
         >
           <div
-            class="css-1shocxe"
+            class="css-u3mic"
           >
             <div
-              class="css-u3mic"
+              class="css-x5nivz"
             >
               <div
-                class="css-x5nivz"
+                class="css-n925f3"
               >
-                <div
-                  class="css-n925f3"
+                <section
+                  class="css-kqlwu2"
                 >
-                  <section
-                    class="css-kqlwu2"
+                  <h3
+                    class="nk-headline-heading css-b3iww6"
                   >
-                    <h3
-                      class="nk-headline-heading css-b3iww6"
-                    >
-                      Test Card
-                    </h3>
-                  </section>
-                </div>
-                <div
-                  class="css-n925f3"
+                    Test Card
+                  </h3>
+                </section>
+              </div>
+              <div
+                class="css-n925f3"
+              >
+                <p
+                  class="css-1as828z"
                 >
-                  <p
-                    class="css-1as828z"
-                  >
-                    lorem ipsum.
-                  </p>
-                </div>
+                  lorem ipsum.
+                </p>
               </div>
             </div>
           </div>
