@@ -52,11 +52,8 @@ export const Header = () => (
   <HeaderContainer>
     <Stack flow="horizontal-center" stackDistribution="space-between">
       <Block>
-        <Link href="/" passHref>
-          {/* This href attribute isn't technically needed but gets around linter warnings because of next.js's weird api */}
-          <a href="/">
-            <Logo title="Go to James Spencer home" />
-          </a>
+        <Link href="/">
+          <Logo title="Go to James Spencer home" />
         </Link>
       </Block>
       <Block>

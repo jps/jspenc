@@ -1,0 +1,63 @@
+{
+  "name": "jspenc-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/jspenc-web",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "root": "apps/jspenc-web",
+        "outputPath": "dist/apps/jspenc-web"
+      },
+      "configurations": {
+        "production": {},
+        "development": {
+          "outputPath": "apps/jspenc-web"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "jspenc-web:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "jspenc-web:build:production",
+          "dev": false
+        },
+        "development": {
+          "buildTarget": "jspenc-web:build:development",
+          "dev": true
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "jspenc-web:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/jspenc-web"],
+      "options": {
+        "jestConfig": "apps/jspenc-web/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/jspenc-web/**/*.{ts,tsx,js,jsx}"]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}
