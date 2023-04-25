@@ -33,52 +33,50 @@ exports[`MediaCardList should render successfully 1`] = `
         <li
           class="css-1200oy4"
         >
-          <div>
-            <div
-              class="css-1m0fc5"
-            >
+          <a
+            href="https://jspenc.com"
+          >
+            <div>
               <div
-                class="css-1shocxe"
+                class="css-1m0fc5"
               >
                 <div
-                  class="css-u3mic"
+                  class="css-1shocxe"
                 >
                   <div
-                    class="css-x5nivz"
+                    class="css-u3mic"
                   >
                     <div
-                      class="css-n925f3"
+                      class="css-x5nivz"
                     >
-                      <a
-                        class="nk-card-link css-12rz4zb"
-                        href="https://jspenc.com"
-                        target="_blank"
+                      <div
+                        class="css-n925f3"
                       >
                         <section
                           class="css-kqlwu2"
                         >
                           <h3
-                            class="nk-headline-heading css-1qyizy8"
+                            class="nk-headline-heading css-b3iww6"
                           >
                             Jspenc
                           </h3>
                         </section>
-                      </a>
-                    </div>
-                    <div
-                      class="css-n925f3"
-                    >
-                      <p
-                        class="css-1as828z"
+                      </div>
+                      <div
+                        class="css-n925f3"
                       >
-                        lorem ipsum
-                      </p>
+                        <p
+                          class="css-1as828z"
+                        >
+                          lorem ipsum
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </li>
       </ul>
     </section>
