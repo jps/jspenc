@@ -8,25 +8,39 @@ import {
 export const fonts = {
   fontFamily010: {
     fontFamily: "'DM Sans', Arial, sans-serif",
-    cropConfig: {
-      top: 9,
-      bottom: 4,
+    fontMetrics: {
+      fontWeight010: {
+        capHeight: 700,
+        ascent: 992,
+        descent: -310,
+        lineGap: 0,
+        unitsPerEm: 1000,
+      },
     },
   },
-
   fontFamily020: {
     fontFamily: "'Raleway', Arial, sans-serif",
-    cropConfig: {
-      top: 8,
-      bottom: 9,
+    fontMetrics: {
+      fontWeight010: {
+        capHeight: 710,
+        ascent: 940,
+        descent: -234,
+        lineGap: 0,
+        unitsPerEm: 1000,
+      },
     },
   },
 
   fontFamily030: {
     fontFamily: "'DM Mono', monospace",
-    cropConfig: {
-      top: 10,
-      bottom: 8,
+    fontMetrics: {
+      fontWeight010: {
+        ascent: 992,
+        capHeight: 700,
+        descent: -310,
+        lineGap: 0,
+        unitsPerEm: 1000,
+      },
     },
     cropAdjustments: '__delete',
   },
@@ -56,6 +70,8 @@ const stylePresets: Record<string, StylePreset> = {
 const componentDefaults = {
   titleBar: {
     spaceInset: 'space000',
+    paddingBlock: 'space000',
+    paddingInline: 'space000',
     heading: {
       stylePresets: 'inkBase',
     },
@@ -82,6 +98,7 @@ const jspencDarkThemeOverrides = {
   colors: {
     interfaceBackground: '#000000',
     inkBase: '#B8A9A9',
+    inkContrast: '#B8A9A9',
   },
 };
 

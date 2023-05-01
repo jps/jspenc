@@ -7,7 +7,6 @@ import {
   GlobalStyles,
 } from '@jspenc/ui/shared-ui';
 import { Cell, Grid, styled } from 'newskit';
-import React from 'react';
 
 //TODO: would be nice if the system could support full height grids.
 const FullHeightCell = styled(Cell)`
