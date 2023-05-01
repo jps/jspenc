@@ -5,6 +5,7 @@ import { BaseProvider } from './base-provider';
 export default {
   component: BaseProvider,
   title: 'BaseProvider',
+  decorators: [],
 } as Meta;
 
 export const ButtonInBaseProvider = () => (
