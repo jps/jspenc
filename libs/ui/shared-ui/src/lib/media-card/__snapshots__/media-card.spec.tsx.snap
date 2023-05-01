@@ -3,48 +3,33 @@
 exports[`MediaCard should render successfully 1`] = `
 <body>
   <div>
-    <a
-      href="#"
+    <div
+      class="css-gkwd09"
     >
       <div
-        class="css-1m0fc5"
+        class="css-7i7vkr"
       >
-        <div
-          class="css-1shocxe"
+        <a
+          class="css-fvd0tl"
+          href="#"
         >
-          <div
-            class="css-u3mic"
+          <section
+            class="css-17j0tqb"
           >
-            <div
-              class="css-x5nivz"
+            <h3
+              class="nk-headline-heading css-b3iww6"
             >
-              <div
-                class="css-n925f3"
-              >
-                <section
-                  class="css-kqlwu2"
-                >
-                  <h3
-                    class="nk-headline-heading css-b3iww6"
-                  >
-                    Test Card
-                  </h3>
-                </section>
-              </div>
-              <div
-                class="css-n925f3"
-              >
-                <p
-                  class="css-1as828z"
-                >
-                  lorem ipsum.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+              Test Card
+            </h3>
+          </section>
+        </a>
+        <p
+          class="css-ceyvsc"
+        >
+          lorem ipsum.
+        </p>
       </div>
-    </a>
+    </div>
   </div>
   <div
     class="nk-layer-organizer"
