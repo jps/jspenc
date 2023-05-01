@@ -1,6 +1,12 @@
-import { CardProps, Card, Headline, TextBlock, Stack } from 'newskit';
-import Link from 'next/link';
-import { forwardRef } from 'react';
+import {
+  CardProps,
+  Headline,
+  TextBlock,
+  CardComposable,
+  CardContent,
+  CardLink,
+} from 'newskit';
+import React from 'react';
 
 export interface MediaCardProps extends CardProps {
   headline: string;
@@ -12,27 +18,37 @@ type MediaCardPropsWithOptionalHref = Omit<MediaCardProps, 'href'> & {
   href?: string;
 };
 
-//TODO: big dirty hack, thanks for this next.js... https://github.com/vercel/next.js/issues/7915
-const CardWrapped = forwardRef<HTMLDivElement, MediaCardPropsWithOptionalHref>(
-  ({ children, headline, href }, ref) => (
-    <div ref={ref}>
-      <Card
-        layout="vertical"
-        href={href ? { href: href, target: '_blank' } : undefined}
-      >
-        <Stack flow="vertical-left" spaceInline="space040">
-          <Headline headingAs="h3">{headline}</Headline>
-          <TextBlock typographyPreset="editorialParagraph020">
-            {children}
-          </TextBlock>
-        </Stack>
-      </Card>
-    </div>
-  )
+const MediaCardHeadline = ({ children }: { children: React.ReactNode }) => (
+  <Headline
+    headingAs="h3"
+    overrides={{
+      typographyPreset: {
+        xs: 'editorialHeadline030',
+        sm: 'editorialHeadline030',
+        md: 'editorialHeadline040',
+        lg: 'editorialHeadline050',
+      },
+    }}
+  >
+    {children}
+  </Headline>
 );
 
-export const MediaCard = ({ href, children, headline }: MediaCardProps) => (
-  <Link href={href} passHref>
-    <CardWrapped headline={headline}>{children}</CardWrapped>
-  </Link>
+export const MediaCard = ({
+  headline,
+  href,
+  children,
+}: MediaCardPropsWithOptionalHref) => (
+  <CardComposable rowGap={'space040'}>
+    <CardContent rowGap={'space040'}>
+      {href ? (
+        <CardLink expand href={href} textOnly external={false}>
+          <MediaCardHeadline>{headline}</MediaCardHeadline>
+        </CardLink>
+      ) : (
+        <MediaCardHeadline>{headline}</MediaCardHeadline>
+      )}
+      <TextBlock typographyPreset="editorialParagraph020">{children}</TextBlock>
+    </CardContent>
+  </CardComposable>
 );

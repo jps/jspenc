@@ -4,22 +4,22 @@ exports[`MediaCardList should render successfully 1`] = `
 <body>
   <div>
     <section
-      class="css-sxfrcw"
+      class="css-1ago99h"
     >
       <div
-        class="css-38y4ob"
+        class="css-1ms0cs2"
       >
         <div
-          class="css-1o36xz5"
+          class="css-h2bdkn"
         >
           <div
-            class="css-dzecoh"
+            class="css-1aiajnh"
           >
             <section
-              class="css-14c5c7z"
+              class="css-1ekltq5"
             >
               <h2
-                class="nk-headline-heading css-17onjfr"
+                class="nk-headline-heading css-b3iww6"
               >
                 Content
               </h2>
@@ -29,58 +29,7 @@ exports[`MediaCardList should render successfully 1`] = `
       </div>
       <ul
         class="css-19hpv4g"
-      >
-        <li
-          class="css-1200oy4"
-        >
-          <div>
-            <div
-              class="css-1m0fc5"
-            >
-              <div
-                class="css-1shocxe"
-              >
-                <div
-                  class="css-u3mic"
-                >
-                  <div
-                    class="css-x5nivz"
-                  >
-                    <div
-                      class="css-n925f3"
-                    >
-                      <a
-                        class="nk-card-link css-12rz4zb"
-                        href="https://jspenc.com"
-                        target="_blank"
-                      >
-                        <section
-                          class="css-kqlwu2"
-                        >
-                          <h3
-                            class="nk-headline-heading css-1qyizy8"
-                          >
-                            Jspenc
-                          </h3>
-                        </section>
-                      </a>
-                    </div>
-                    <div
-                      class="css-n925f3"
-                    >
-                      <p
-                        class="css-1as828z"
-                      >
-                        lorem ipsum
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+      />
     </section>
   </div>
   <div

@@ -3,6 +3,11 @@
 # and using workspace persistence
 version: 2.1
 
+parameters:
+  node_version:
+    type: string
+    default: "19.9.0"
+
 orbs:
   node: circleci/node@4.7.0
   # The S3 orb will setup the aws-cli and quickly copy or sync anything to s3.
@@ -15,11 +20,11 @@ orbs:
 jobs:
   restore:
     docker:
-      - image: cimg/node:16.7.0
+      - image: cimg/node:<< pipeline.parameters.node_version >>
     steps:
       - checkout
       - node/install-packages:
-          override-ci-command: yarn intall --frozen-lockfile
+          override-ci-command: yarn install --frozen-lockfile 
           pkg-manager: yarn
 
 workflows:
@@ -28,7 +33,7 @@ workflows:
       - node/test:
           name: test
           pkg-manager: yarn
-          version: '16.7.0'
+          version: << pipeline.parameters.node_version >>
           run-command: test
           requires:
             - lint
@@ -36,11 +41,11 @@ workflows:
           name: build
           pkg-manager: yarn
           yarn-run: build
-          version: '16.7.0'
+          version: << pipeline.parameters.node_version >>
           requires:
             - test
       - node/run:
           name: lint
           pkg-manager: yarn
           yarn-run: affected:lint
-          version: '16.7.0'
+          version: << pipeline.parameters.node_version >>

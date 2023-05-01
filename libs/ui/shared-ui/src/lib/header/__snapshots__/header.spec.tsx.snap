@@ -10,7 +10,7 @@ exports[`Header should render successfully 1`] = `
         class="css-1bq9n3y"
       >
         <div
-          class="css-30qa7x"
+          class="css-13byt3y"
         >
           <a
             href="/"
@@ -55,7 +55,7 @@ exports[`Header should render successfully 1`] = `
           </a>
         </div>
         <div
-          class="css-30qa7x"
+          class="css-13byt3y"
         >
           <div
             class="css-u7u3qq"
@@ -65,7 +65,7 @@ exports[`Header should render successfully 1`] = `
             >
               <a
                 aria-label="github"
-                class="css-5p18y4"
+                class="css-2nyl4g"
                 data-testid="buttonLink"
                 href="https://github.com/jps"
               >
@@ -88,7 +88,7 @@ exports[`Header should render successfully 1`] = `
             >
               <a
                 aria-label="twitter"
-                class="css-5p18y4"
+                class="css-2nyl4g"
                 data-testid="buttonLink"
                 href="https://twitter.com/jpspenc"
               >
@@ -111,7 +111,7 @@ exports[`Header should render successfully 1`] = `
             >
               <button
                 aria-label="enable night mode"
-                class="css-5p18y4"
+                class="css-2nyl4g"
                 data-testid="button"
                 type="button"
               >
