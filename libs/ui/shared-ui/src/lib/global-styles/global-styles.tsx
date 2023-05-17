@@ -10,6 +10,7 @@ export const GlobalStyles = () => {
             margin: 0,
             height: '100%',
             backgroundColor: theme.colors.interfaceBackground,
+            transition: 'background-color 0.5s cubic-bezier(.77,0,.18,1);',
           },
         }}
       />
