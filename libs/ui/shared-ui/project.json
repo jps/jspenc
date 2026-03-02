@@ -3,16 +3,17 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ui/shared-ui/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["libs/ui/shared-ui/**/*.{ts,tsx,js,jsx}"]
       },
       "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/ui/shared-ui"],
       "options": {
         "jestConfig": "libs/ui/shared-ui/jest.config.ts",
@@ -20,7 +21,7 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "uiFramework": "@storybook/react",
         "staticDir": ["./apps/jspenc-web/public/"],
@@ -34,7 +35,7 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
         "uiFramework": "@storybook/react",
@@ -47,6 +48,5 @@
         }
       }
     }
-  },
-  "tags": []
+  }
 }

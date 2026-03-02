@@ -3,9 +3,11 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/jspenc-web-e2e/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["jspenc-web"],
   "targets": {
     "e2e": {
-      "executor": "@nrwl/cypress:cypress",
+      "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "apps/jspenc-web-e2e/cypress.json",
         "tsConfig": "apps/jspenc-web-e2e/tsconfig.e2e.json",
@@ -18,13 +20,11 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/jspenc-web-e2e/**/*.{js,ts}"]
       },
       "outputs": ["{options.outputFile}"]
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["jspenc-web"]
+  }
 }

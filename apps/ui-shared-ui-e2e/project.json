@@ -3,9 +3,11 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/ui-shared-ui-e2e/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["ui-shared-ui"],
   "targets": {
     "e2e": {
-      "executor": "@nrwl/cypress:cypress",
+      "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "apps/ui-shared-ui-e2e/cypress.json",
         "tsConfig": "apps/ui-shared-ui-e2e/tsconfig.e2e.json",
@@ -18,14 +20,14 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": ["apps/ui-shared-ui-e2e/**/*.{js,ts}"]
       },
       "outputs": ["{options.outputFile}"]
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
@@ -38,7 +40,7 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
         "uiFramework": "@storybook/react",
@@ -51,7 +53,5 @@
         }
       }
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["ui-shared-ui"]
+  }
 }
