@@ -6,7 +6,7 @@ version: 2.1
 parameters:
   node_version:
     type: string
-    default: "19.9.0"
+    default: '20.18.0'
 
 orbs:
   node: circleci/node@4.7.0
@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-          override-ci-command: yarn install --frozen-lockfile 
+          override-ci-command: yarn install --frozen-lockfile
           pkg-manager: yarn
 
 workflows:
