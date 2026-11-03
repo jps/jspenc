@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react';
-import { Button } from 'newskit';
+import { TextBlock } from '../text-block/text-block';
 import { BaseProvider } from './base-provider';
 
 export default {
@@ -8,8 +8,8 @@ export default {
   decorators: [],
 } as Meta;
 
-export const ButtonInBaseProvider = () => (
+export const ContentInBaseProvider = () => (
   <BaseProvider>
-    <Button>Hello World</Button>
+    <TextBlock>Hello World</TextBlock>
   </BaseProvider>
 );

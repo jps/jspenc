@@ -1,13 +1,12 @@
-import { NewsKitProvider, UncompiledTheme } from 'newskit';
-import { createContext, useEffect, useState } from 'react';
-import { JspencThemeDark, JspencThemeLight } from '../theme/theme';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { JspencTheme, JspencThemeDark, JspencThemeLight } from '../theme/theme';
 
 export interface BaseProviderProps {
   children: React.ReactNode;
 }
 
 export type SiteThemeContext = {
-  currentTheme: UncompiledTheme;
+  currentTheme: JspencTheme;
   toggleTheme: () => void;
 };
 
@@ -18,22 +17,31 @@ export const SiteThemeContext = createContext<SiteThemeContext>({
   },
 });
 
-const themes = new Map([
+export const useTheme = (): JspencTheme => {
+  const { currentTheme } = useContext(SiteThemeContext);
+  return currentTheme;
+};
+
+const themes = new Map<string, JspencTheme>([
   [JspencThemeLight.name, JspencThemeLight],
   [JspencThemeDark.name, JspencThemeDark],
 ]);
 
 export const BaseProvider = ({ children }: BaseProviderProps) => {
-
-  const [currentTheme, setCurrentTheme] = useState<UncompiledTheme>(JspencThemeLight);
+  const [currentTheme, setCurrentTheme] =
+    useState<JspencTheme>(JspencThemeLight);
   const isLightTheme = currentTheme.name === JspencThemeLight.name;
 
-  const setTheme = (theme: UncompiledTheme) => {
+  const setTheme = (theme: JspencTheme) => {
     setCurrentTheme(theme);
     localStorage.setItem('theme', theme.name);
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', theme.name);
+    }
   };
 
-  const toggleTheme = () =>  setTheme(isLightTheme ? JspencThemeDark : JspencThemeLight);
+  const toggleTheme = () =>
+    setTheme(isLightTheme ? JspencThemeDark : JspencThemeLight);
 
   useEffect(() => {
     const userThemeKey = localStorage.getItem('theme');
@@ -47,7 +55,10 @@ export const BaseProvider = ({ children }: BaseProviderProps) => {
 
     if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
       setTheme(JspencThemeDark);
+      return;
     }
+
+    document.documentElement.setAttribute('data-theme', JspencThemeLight.name);
   }, []);
 
   const providerValue = {
@@ -57,7 +68,7 @@ export const BaseProvider = ({ children }: BaseProviderProps) => {
 
   return (
     <SiteThemeContext.Provider value={providerValue}>
-      <NewsKitProvider theme={currentTheme}>{children}</NewsKitProvider>
+      {children}
     </SiteThemeContext.Provider>
   );
 };

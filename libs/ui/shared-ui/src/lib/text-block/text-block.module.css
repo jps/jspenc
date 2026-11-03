@@ -1,0 +1,29 @@
+.textBlock {
+  margin: 0;
+  color: var(--color-ink-base);
+}
+
+.utilityBody010 {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.utilityBody030 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.editorialParagraph020 {
+  font-family: var(--font-editorial);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.inkBase {
+  color: var(--color-ink-base);
+}

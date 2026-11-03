@@ -1,32 +1,17 @@
-import {
-  Block,
-  Stack,
-  IconButton,
-  styled,
-  getSpacingCssFromTheme,
-  toNewsKitIcon,
-} from 'newskit';
-import { IconFilledGitHub, IconFilledTwitter } from './../icons';
-import { WeatherMoon } from '@emotion-icons/fluentui-system-filled/WeatherMoon';
-import { WeatherSunny } from '@emotion-icons/fluentui-system-filled/WeatherSunny';
 import Link from 'next/link';
 import { ReactNode, useContext } from 'react';
-import { SiteThemeContext } from '../..';
+import { SiteThemeContext } from '../base-provider/base-provider';
+import { IconButton } from '../icon-button/icon-button';
+import {
+  IconFilledGitHub,
+  IconFilledTwitter,
+  IconWeatherMoon,
+  IconWeatherSunny,
+} from '../icons';
 import { Logo } from '../logo/logo';
+import { Stack } from '../stack/stack';
 import { JspencThemeLight } from '../theme/theme';
-
-const HeaderContainer = styled.header`
-  ${getSpacingCssFromTheme('marginTop', 'space040')};
-  ${getSpacingCssFromTheme('marginBottom', 'space040')};
-`;
-
-const defaultButtonStyle = {
-  overrides: { stylePreset: 'iconButtonMinimalSecondary' },
-};
-const defaultIconSize = { overrides: { size: 'iconSize030' } };
-
-const MoonIcon = toNewsKitIcon(WeatherMoon);
-const SunIcon = toNewsKitIcon(WeatherSunny);
+import styles from './header.module.css';
 
 const DayNightModeToggle = () => {
   const { currentTheme, toggleTheme } = useContext(SiteThemeContext);
@@ -34,47 +19,39 @@ const DayNightModeToggle = () => {
 
   const createButton = (children: ReactNode, ariaLabel: string) => (
     <IconButton
-      children={children}
       aria-label={ariaLabel}
       onClick={() => {
         toggleTheme();
       }}
-      {...defaultButtonStyle}
-    />
+    >
+      {children}
+    </IconButton>
   );
 
   return isLightTheme
-    ? createButton(<MoonIcon {...defaultIconSize} />, 'enable night mode')
-    : createButton(<SunIcon {...defaultIconSize} />, 'enable day mode');
+    ? createButton(<IconWeatherMoon />, 'enable night mode')
+    : createButton(<IconWeatherSunny />, 'enable day mode');
 };
 
 export const Header = () => (
-  <HeaderContainer>
+  <header className={styles.header}>
     <Stack flow="horizontal-center" stackDistribution="space-between">
-      <Block>
+      <div>
         <Link href="/">
           <Logo title="Go to James Spencer home" />
         </Link>
-      </Block>
-      <Block>
+      </div>
+      <div>
         <Stack flow="horizontal-center" spaceInline="space030">
-          <IconButton
-            aria-label="github"
-            {...defaultButtonStyle}
-            href="https://github.com/jps"
-          >
-            <IconFilledGitHub {...defaultIconSize} />
+          <IconButton aria-label="github" href="https://github.com/jps">
+            <IconFilledGitHub />
           </IconButton>
-          <IconButton
-            aria-label="twitter"
-            {...defaultButtonStyle}
-            href="https://twitter.com/jpspenc"
-          >
-            <IconFilledTwitter {...defaultIconSize} />
+          <IconButton aria-label="twitter" href="https://twitter.com/jpspenc">
+            <IconFilledTwitter />
           </IconButton>
           <DayNightModeToggle />
         </Stack>
-      </Block>
+      </div>
     </Stack>
-  </HeaderContainer>
+  </header>
 );

@@ -1,0 +1,15 @@
+.footer {
+  margin-top: var(--space-030, 12px);
+  margin-bottom: var(--space-030, 12px);
+}
+
+.dividerBlock {
+  margin-bottom: var(--space-030, 12px);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border-divider, #e2e2e2);
+  margin: 0;
+  width: 100%;
+}
