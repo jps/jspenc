@@ -1,6 +1,9 @@
 {
   "name": "jspenc-web",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@emotion-icons/fluentui-system-filled": "3.15.0",
     "@emotion/react": "11.10.5",
