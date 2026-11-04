@@ -5,7 +5,7 @@ export interface IconButtonProps {
   children: React.ReactNode;
   'aria-label': string;
   href?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   className?: string;
 }
 
@@ -25,6 +25,7 @@ export const IconButton = ({
       <a
         href={href}
         aria-label={ariaLabel}
+        onClick={onClick}
         className={combinedClassName}
         data-testid="buttonLink"
       >

@@ -25,6 +25,7 @@ export const TextBlock = ({
 }: TextBlockProps) => {
   const combinedClassName = [
     styles.textBlock,
+    Component !== 'span' ? styles.blockCrop : '',
     styles[typographyPreset],
     styles[stylePreset],
     className,

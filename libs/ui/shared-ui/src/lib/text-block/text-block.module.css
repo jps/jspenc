@@ -1,16 +1,19 @@
 .textBlock {
   margin: 0;
-  padding: 0.5px 0px;
   color: var(--color-ink-base);
 }
 
-.textBlock::before {
+.blockCrop {
+  padding: 0.5px 0px;
+}
+
+.blockCrop::before {
   content: '';
   margin-bottom: -0.391em;
   display: block;
 }
 
-.textBlock::after {
+.blockCrop::after {
   content: '';
   margin-top: -0.409em;
   display: block;

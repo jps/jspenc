@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+.flow-horizontal-center > .listItem {
+  width: auto;
+}
+
 /* Distribution */
 .dist-space-between {
   justify-content: space-between;
