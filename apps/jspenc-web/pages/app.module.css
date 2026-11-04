@@ -1,0 +1,42 @@
+.grid {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 var(--space-020, 8px);
+}
+
+.fullHeightCell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-020, 8px);
+}
+
+@media (min-width: 480px) {
+  .fullHeightCell {
+    width: 83.3333%;
+  }
+}
+
+@media (min-width: 768px) {
+  .fullHeightCell {
+    width: 66.6667%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    padding: 0 var(--space-030, 12px);
+  }
+
+  .fullHeightCell {
+    width: 50%;
+    padding: var(--space-030, 12px);
+  }
+}
+
+.footerContainer {
+  margin-top: auto;
+}

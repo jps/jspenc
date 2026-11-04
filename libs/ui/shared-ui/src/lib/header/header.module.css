@@ -1,0 +1,4 @@
+.header {
+  margin-top: var(--space-040, 16px);
+  margin-bottom: var(--space-040, 16px);
+}

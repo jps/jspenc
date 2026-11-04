@@ -1,0 +1,48 @@
+.textBlock {
+  margin: 0;
+  color: var(--color-ink-base);
+}
+
+.blockCrop {
+  padding: 0.5px 0px;
+}
+
+.blockCrop::before {
+  content: '';
+  margin-bottom: -0.391em;
+  display: block;
+}
+
+.blockCrop::after {
+  content: '';
+  margin-top: -0.409em;
+  display: block;
+}
+
+.utilityBody010 {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.utilityBody030 {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.editorialParagraph020 {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.inkBase {
+  color: var(--color-ink-base);
+}

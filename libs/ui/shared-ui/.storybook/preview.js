@@ -1,8 +1,9 @@
-import { BaseProvider } from '../src';
+import { BaseProvider, GlobalStyles } from '../src';
 
 export const decorators = [
   (Story) => (
     <BaseProvider>
+      <GlobalStyles />
       <Story />
     </BaseProvider>
   ),

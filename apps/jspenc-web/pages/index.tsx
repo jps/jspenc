@@ -1,5 +1,9 @@
-import { MediaCard, MediaCardList } from '@jspenc/ui/shared-ui';
-import { Stack, TextBlock } from 'newskit';
+import {
+  MediaCard,
+  MediaCardList,
+  Stack,
+  TextBlock,
+} from '@jspenc/ui/shared-ui';
 import { writing } from '../content/writing';
 import { projects } from '../content/projects';
 
