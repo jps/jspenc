@@ -34,9 +34,13 @@ export const BaseProvider = ({ children }: BaseProviderProps) => {
 
   const setTheme = (theme: JspencTheme) => {
     setCurrentTheme(theme);
-    localStorage.setItem('theme', theme.name);
     if (typeof document !== 'undefined') {
       document.documentElement.setAttribute('data-theme', theme.name);
+    }
+    try {
+      localStorage.setItem('theme', theme.name);
+    } catch {
+      // Ignore storage errors (e.g. blocked storage or quota exceeded)
     }
   };
 
@@ -44,13 +48,17 @@ export const BaseProvider = ({ children }: BaseProviderProps) => {
     setTheme(isLightTheme ? JspencThemeDark : JspencThemeLight);
 
   useEffect(() => {
-    const userThemeKey = localStorage.getItem('theme');
-    if (userThemeKey) {
-      const userTheme = themes.get(userThemeKey);
-      if (userTheme) {
-        setTheme(userTheme);
-        return;
+    try {
+      const userThemeKey = localStorage.getItem('theme');
+      if (userThemeKey) {
+        const userTheme = themes.get(userThemeKey);
+        if (userTheme) {
+          setTheme(userTheme);
+          return;
+        }
       }
+    } catch {
+      // Ignore storage read errors
     }
 
     if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
