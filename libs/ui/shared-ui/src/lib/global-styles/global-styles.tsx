@@ -118,7 +118,7 @@ export const GlobalStyles = () => {
     <style
       data-theme={theme.name}
       dangerouslySetInnerHTML={{
-        __html: `${globalCss}\nbody { background-color: ${theme.colors.interfaceBackground}; color: ${theme.colors.inkBase}; }`,
+        __html: globalCss,
       }}
     />
   );

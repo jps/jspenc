@@ -49,7 +49,14 @@ export const Stack = ({
     return (
       <ul className={combinedClassName}>
         {items.map((child, index) => (
-          <li key={index} className={styles.listItem}>
+          <li
+            key={
+              React.isValidElement(child) && child.key != null
+                ? child.key
+                : index
+            }
+            className={styles.listItem}
+          >
             {child}
           </li>
         ))}
