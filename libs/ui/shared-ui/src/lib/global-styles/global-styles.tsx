@@ -75,11 +75,11 @@ const globalCss = `
     --space-070: 40px;
 
     --color-interface-background: #ffffff;
-    --color-ink-base: #2e2e2e;
-    --color-ink-contrast: #0a0a0a;
-    --color-ink-subtle: #525252;
-    --color-border-divider: #e2e2e2;
-    --color-interactive-hover-bg: rgba(46, 46, 46, 0.08);
+    --color-ink-base: #3B3B3B;
+    --color-ink-contrast: #111111;
+    --color-ink-subtle: #6A6A6A;
+    --color-border-divider: #E2E2E2;
+    --color-interactive-hover-bg: rgba(59, 59, 59, 0.08);
   }
 
   [data-theme='jspenc-dark'] {

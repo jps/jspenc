@@ -7,21 +7,45 @@
 }
 
 .titleBar {
-  border-bottom: 1px solid var(--color-ink-base);
-  padding-bottom: var(--space-020, 8px);
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  color: var(--color-ink-base);
+  padding: 0;
 }
 
 .heading {
   margin: 0;
+  padding: 0.5px 0px;
   font-family: var(--font-editorial);
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.25;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 0;
   color: var(--color-ink-base);
+}
+
+.heading::before {
+  content: '';
+  margin-bottom: -0.2055em;
+  display: block;
+}
+
+.heading::after {
+  content: '';
+  margin-top: -0.2095em;
+  display: block;
 }
 
 @media (min-width: 768px) {
   .heading {
-    font-size: 1.75rem;
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 48px;
+    line-height: 54px;
   }
 }

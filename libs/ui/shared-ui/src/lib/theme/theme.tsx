@@ -25,10 +25,10 @@ export const JspencThemeLight: JspencTheme = {
   name: 'jspenc-light',
   colors: {
     interfaceBackground: '#ffffff',
-    inkBase: '#2e2e2e',
-    inkContrast: '#0a0a0a',
-    inkSubtle: '#525252',
-    borderDivider: '#e2e2e2',
+    inkBase: '#3B3B3B',
+    inkContrast: '#111111',
+    inkSubtle: '#6A6A6A',
+    borderDivider: '#E2E2E2',
   },
 };
 

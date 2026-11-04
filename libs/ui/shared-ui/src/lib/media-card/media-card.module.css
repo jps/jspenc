@@ -29,25 +29,43 @@
 
 .headlineSection {
   margin: 0;
+  padding: 0.5px 0px;
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 27px;
+  letter-spacing: 0;
+}
+
+.headlineSection::before {
+  content: '';
+  margin-bottom: -0.2055em;
+  display: block;
+}
+
+.headlineSection::after {
+  content: '';
+  margin-top: -0.2095em;
+  display: block;
 }
 
 .headline {
+  display: inline;
+  font: inherit;
   margin: 0;
-  font-family: var(--font-editorial);
-  font-weight: 600;
-  color: var(--color-ink-base);
-  font-size: 1.25rem;
-  line-height: 1.25;
+  color: var(--color-ink-contrast);
 }
 
 @media (min-width: 768px) {
-  .headline {
-    font-size: 1.5rem;
+  .headlineSection {
+    font-size: 28px;
+    line-height: 31.5px;
   }
 }
 
 @media (min-width: 1024px) {
-  .headline {
-    font-size: 1.75rem;
+  .headlineSection {
+    font-size: 32px;
+    line-height: 36px;
   }
 }

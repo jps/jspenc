@@ -1,27 +1,43 @@
 .textBlock {
   margin: 0;
+  padding: 0.5px 0px;
   color: var(--color-ink-base);
+}
+
+.textBlock::before {
+  content: '';
+  margin-bottom: -0.391em;
+  display: block;
+}
+
+.textBlock::after {
+  content: '';
+  margin-top: -0.409em;
+  display: block;
 }
 
 .utilityBody010 {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 18px;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
 .utilityBody030 {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
 .editorialParagraph020 {
-  font-family: var(--font-editorial);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
 .inkBase {
