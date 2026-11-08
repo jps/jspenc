@@ -4,36 +4,57 @@ exports[`MediaCardList should render successfully 1`] = `
 <body>
   <div>
     <section
-      class="css-1ago99h"
+      class="section"
     >
       <div
-        class="css-1ms0cs2"
+        class="titleBarWrapper"
       >
         <div
-          class="css-h2bdkn"
+          class="titleBar"
         >
-          <div
-            class="css-1aiajnh"
+          <h2
+            class="heading"
           >
-            <section
-              class="css-1ekltq5"
-            >
-              <h2
-                class="nk-headline-heading css-b3iww6"
-              >
-                Content
-              </h2>
-            </section>
-          </div>
+            Content
+          </h2>
         </div>
       </div>
       <ul
-        class="css-19hpv4g"
-      />
+        class="stack flow-vertical-left dist-flex-start space-space060 list"
+      >
+        <li
+          class="listItem"
+        >
+          <div
+            class="card"
+          >
+            <div
+              class="content"
+            >
+              <a
+                class="cardLink"
+                href="https://jspenc.com"
+              >
+                <section
+                  class="headlineSection"
+                >
+                  <h3
+                    class="headline"
+                  >
+                    Jspenc
+                  </h3>
+                </section>
+              </a>
+              <p
+                class="textBlock blockCrop editorialParagraph020 inkBase"
+              >
+                lorem ipsum
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </section>
   </div>
-  <div
-    class="nk-layer-organizer"
-  />
 </body>
 `;

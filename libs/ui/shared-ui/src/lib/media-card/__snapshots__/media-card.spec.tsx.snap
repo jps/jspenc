@@ -4,35 +4,32 @@ exports[`MediaCard should render successfully 1`] = `
 <body>
   <div>
     <div
-      class="css-gkwd09"
+      class="card"
     >
       <div
-        class="css-7i7vkr"
+        class="content"
       >
         <a
-          class="css-fvd0tl"
+          class="cardLink"
           href="#"
         >
           <section
-            class="css-17j0tqb"
+            class="headlineSection"
           >
             <h3
-              class="nk-headline-heading css-b3iww6"
+              class="headline"
             >
               Test Card
             </h3>
           </section>
         </a>
         <p
-          class="css-ceyvsc"
+          class="textBlock blockCrop editorialParagraph020 inkBase"
         >
           lorem ipsum.
         </p>
       </div>
     </div>
   </div>
-  <div
-    class="nk-layer-organizer"
-  />
 </body>
 `;

@@ -1,54 +1,30 @@
-import {
-  CardProps,
-  Headline,
-  TextBlock,
-  CardComposable,
-  CardContent,
-  CardLink,
-} from 'newskit';
 import React from 'react';
+import { TextBlock } from '../text-block/text-block';
+import styles from './media-card.module.css';
 
-export interface MediaCardProps extends CardProps {
+export interface MediaCardProps {
   headline: string;
-  children: string;
-  href: string;
+  children: React.ReactNode;
+  href?: string;
 }
 
-type MediaCardPropsWithOptionalHref = Omit<MediaCardProps, 'href'> & {
-  href?: string;
-};
-
 const MediaCardHeadline = ({ children }: { children: React.ReactNode }) => (
-  <Headline
-    headingAs="h3"
-    overrides={{
-      typographyPreset: {
-        xs: 'editorialHeadline030',
-        sm: 'editorialHeadline030',
-        md: 'editorialHeadline040',
-        lg: 'editorialHeadline050',
-      },
-    }}
-  >
-    {children}
-  </Headline>
+  <section className={styles.headlineSection}>
+    <h3 className={styles.headline}>{children}</h3>
+  </section>
 );
 
-export const MediaCard = ({
-  headline,
-  href,
-  children,
-}: MediaCardPropsWithOptionalHref) => (
-  <CardComposable rowGap={'space040'}>
-    <CardContent rowGap={'space040'}>
+export const MediaCard = ({ headline, href, children }: MediaCardProps) => (
+  <div className={styles.card}>
+    <div className={styles.content}>
       {href ? (
-        <CardLink expand href={href} textOnly external={false}>
+        <a className={styles.cardLink} href={href}>
           <MediaCardHeadline>{headline}</MediaCardHeadline>
-        </CardLink>
+        </a>
       ) : (
         <MediaCardHeadline>{headline}</MediaCardHeadline>
       )}
       <TextBlock typographyPreset="editorialParagraph020">{children}</TextBlock>
-    </CardContent>
-  </CardComposable>
+    </div>
+  </div>
 );

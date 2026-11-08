@@ -6,18 +6,7 @@ import {
   Footer,
   GlobalStyles,
 } from '@jspenc/ui/shared-ui';
-import { Cell, Grid, styled } from 'newskit';
-
-//TODO: would be nice if the system could support full height grids.
-const FullHeightCell = styled(Cell)`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-`;
-
-const FooterContainer = styled.div`
-  margin-top: auto;
-`;
+import styles from './app.module.css';
 
 const Favicon = () => (
   <>
@@ -36,25 +25,17 @@ const CustomApp = ({ Component, pageProps }: AppProps) => (
     </Head>
     <BaseProvider>
       <GlobalStyles />
-      <Grid>
-        <FullHeightCell
-          xs={12}
-          smOffset={1}
-          sm={10}
-          mdOffset={2}
-          md={8}
-          lgOffset={3}
-          lg={6}
-        >
+      <div className={styles.grid}>
+        <div className={styles.fullHeightCell}>
           <Header />
           <main>
             <Component {...pageProps} />
           </main>
-          <FooterContainer>
+          <div className={styles.footerContainer}>
             <Footer />
-          </FooterContainer>
-        </FullHeightCell>
-      </Grid>
+          </div>
+        </div>
+      </div>
     </BaseProvider>
   </>
 );
