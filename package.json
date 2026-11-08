@@ -4,7 +4,7 @@
   "license": "MIT",
   "packageManager": "yarn@1.22.22",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "26.x"
   },
   "scripts": {
     "nx": "nx",
