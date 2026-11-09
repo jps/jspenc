@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Index from '../pages/index';
-import { BaseProvider, mockMatchMedia } from '@jspenc/ui/shared-ui';
+import { BaseProvider } from '@jspenc/ui/shared-ui';
+import { mockMatchMedia } from '@jspenc/ui/shared-ui/testing-utils';
 
 describe('Index', () => {
   it('should render successfully', () => {

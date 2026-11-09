@@ -1,14 +1,28 @@
-import { getHeading } from '../support/app.po';
+import { getHeaderLogo } from '../support/app.po';
 
 describe('jspenc-web smoke tests', () => {
   beforeEach(() => {
-    cy.clearLocalStorage();
-    cy.visit('/');
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('theme', 'jspenc-light');
+      },
+    });
   });
 
-  it('renders the header, introduction, and contact link', () => {
-    getHeading().should('contain.text', "Hello, I'm James");
-    cy.contains("Welcome to my corner of the internet").should('be.visible');
+  it('renders the header logo, social links, introduction, and contact link', () => {
+    getHeaderLogo()
+      .should('be.visible')
+      .find('title')
+      .should('have.text', 'Go to James Spencer home');
+
+    cy.get('header a[aria-label="github"]')
+      .should('be.visible')
+      .and('have.attr', 'href', 'https://github.com/jps');
+    cy.get('header a[aria-label="twitter"]')
+      .should('be.visible')
+      .and('have.attr', 'href', 'https://twitter.com/jpspenc');
+
+    cy.contains('Welcome to my corner of the internet').should('be.visible');
     cy.get('a[href="mailto:me@jspenc.com"]')
       .should('be.visible')
       .and('contain.text', 'contact.');
@@ -33,23 +47,25 @@ describe('jspenc-web smoke tests', () => {
   it('toggles between light and dark themes and persists the selection', () => {
     cy.get('html').should('have.attr', 'data-theme', 'jspenc-light');
 
-    cy.get('button[aria-label="switch to dark theme"]').click();
+    cy.get('button[aria-label="enable night mode"]').click();
     cy.get('html').should('have.attr', 'data-theme', 'jspenc-dark');
     cy.window()
       .its('localStorage')
       .invoke('getItem', 'theme')
       .should('eq', 'jspenc-dark');
 
-    cy.get('button[aria-label="switch to light theme"]').click();
+    cy.get('button[aria-label="enable day mode"]').click();
     cy.get('html').should('have.attr', 'data-theme', 'jspenc-light');
+    cy.window()
+      .its('localStorage')
+      .invoke('getItem', 'theme')
+      .should('eq', 'jspenc-light');
   });
 
-  it('renders the footer social links', () => {
-    cy.get('footer a[aria-label="Goto my github"]')
+  it('renders the footer divider and copyright', () => {
+    cy.get('footer hr').should('be.visible');
+    cy.get('footer')
       .should('be.visible')
-      .and('have.attr', 'href', 'https://github.com/jps');
-    cy.get('footer a[aria-label="Goto my twitter"]')
-      .should('be.visible')
-      .and('have.attr', 'href', 'https://twitter.com/_jspenc');
+      .and('contain.text', `James Spencer ${new Date().getFullYear()} ©`);
   });
 });

@@ -5,10 +5,25 @@ describe('ui-shared-ui Storybook smoke tests', () => {
   });
 
   it('renders the Header story and toggles theme', () => {
-    cy.visit('/iframe.html?id=header--header-default');
-    cy.contains('h1', "Hello, I'm James").should('be.visible');
-    cy.get('button[aria-label="switch to dark theme"]').click();
+    cy.visit('/iframe.html?id=header--header-default', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('theme', 'jspenc-light');
+      },
+    });
+    cy.get('header a[href="/"] svg')
+      .should('be.visible')
+      .find('title')
+      .should('have.text', 'Go to James Spencer home');
+    cy.get('header a[aria-label="github"]')
+      .should('be.visible')
+      .and('have.attr', 'href', 'https://github.com/jps');
+    cy.get('header a[aria-label="twitter"]')
+      .should('be.visible')
+      .and('have.attr', 'href', 'https://twitter.com/jpspenc');
+
+    cy.get('button[aria-label="enable night mode"]').click();
     cy.get('html').should('have.attr', 'data-theme', 'jspenc-dark');
+    cy.get('button[aria-label="enable day mode"]').should('be.visible');
   });
 
   it('renders the MediaCard story', () => {
@@ -19,7 +34,9 @@ describe('ui-shared-ui Storybook smoke tests', () => {
 
   it('renders the Footer story', () => {
     cy.visit('/iframe.html?id=footer--footer-default');
-    cy.get('footer a[aria-label="Goto my github"]').should('be.visible');
-    cy.get('footer a[aria-label="Goto my twitter"]').should('be.visible');
+    cy.get('footer hr').should('be.visible');
+    cy.get('footer')
+      .should('be.visible')
+      .and('contain.text', `James Spencer ${new Date().getFullYear()} ©`);
   });
 });

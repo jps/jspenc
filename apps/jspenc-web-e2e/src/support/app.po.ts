@@ -1,1 +1,1 @@
-export const getHeading = () => cy.get('header h1');
+export const getHeaderLogo = () => cy.get('header a[href="/"] svg');
