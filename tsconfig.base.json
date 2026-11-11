@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jspenc/ui/shared-ui": ["libs/ui/shared-ui/src/index.ts"]
+      "@jspenc/ui/shared-ui": ["libs/ui/shared-ui/src/index.ts"],
+      "@jspenc/ui/shared-ui/testing-utils": [
+        "libs/ui/shared-ui/src/lib/testing-utils/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

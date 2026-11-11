@@ -5,15 +5,6 @@
   "references": [
     {
       "path": "./tsconfig.e2e.json"
-    },
-    {
-      "path": "./.storybook/tsconfig.json"
     }
-  ],
-  "exclude": [
-    "**/*.stories.ts",
-    "**/*.stories.js",
-    "**/*.stories.jsx",
-    "**/*.stories.tsx"
   ]
 }

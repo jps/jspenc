@@ -8,6 +8,5 @@ export * from './lib/logo/logo';
 export * from './lib/media-card/media-card';
 export * from './lib/media-card-list/media-card-list';
 export * from './lib/stack/stack';
-export * from './lib/testing-utils';
 export * from './lib/text-block/text-block';
 export * from './lib/theme/theme';

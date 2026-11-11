@@ -48,3 +48,6 @@ jobs:
       - name: Build Storybook
         run: yarn build-storybook
 
+      - name: E2E Smoke Tests
+        run: yarn e2e --configuration=ci
+
