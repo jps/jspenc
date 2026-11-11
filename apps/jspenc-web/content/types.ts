@@ -1,5 +1,5 @@
 export interface MediaListData {
-    href : string,
-    headline : string,
-    body : string,  
-  };
+  href: string;
+  headline: string;
+  body: string;
+}
